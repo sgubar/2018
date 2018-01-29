@@ -1,6 +1,9 @@
 # demo
 All samples which have been excersized on practice
 
+# Rating
+https://1drv.ms/x/s!AnsBG48pXHjRsXP-Py5B9uHqFpAu
+
 # Useful links
 ## Materials(books)
 https://onedrive.live.com/?authkey=%21AKAj9Sft26QGgHA&id=D1785C298F1B017B%213873&cid=D1785C298F1B017B
