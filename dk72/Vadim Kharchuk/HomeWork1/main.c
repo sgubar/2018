@@ -8,9 +8,9 @@ int main(int argc, char *argv[]) {
 	float denominator , Result, denominatorModule;
 	
 	//Work with User 
-	printf("Put first value : ");
+	printf("Put first value (int) : ");
 	scanf("%d",&FirstValue);
-    printf("\nPut second value :");
+    printf("\nPut second value (int) :");
     scanf("%d",&SecondValue);
     
     //Formula calculation
