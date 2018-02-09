@@ -1,7 +1,7 @@
 # demo
 All samples which have been excersized on practice
 
-# Rating
+# Rating, the list of home work, the list of laboratory work
 https://1drv.ms/x/s!AnsBG48pXHjRsXOwRboTa2ix_usN
 
 # Useful links
