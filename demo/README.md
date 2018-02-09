@@ -2,12 +2,12 @@
 All samples which have been excersized on practice
 
 # Rating
-https://1drv.ms/x/s!AnsBG48pXHjRsXP-Py5B9uHqFpAu
+https://1drv.ms/x/s!AnsBG48pXHjRsXOwRboTa2ix_usN
 
 # Useful links
 ## Materials(books)
-https://onedrive.live.com/?authkey=%21AKAj9Sft26QGgHA&id=D1785C298F1B017B%213873&cid=D1785C298F1B017B
+https://1drv.ms/f/s!AnsBG48pXHjRniGgI_Un7dukBoBw
 
 ## Presentations
-https://onedrive.live.com/?authkey=%21ADB8xoKbMT40R9w&id=D1785C298F1B017B%21699&cid=D1785C298F1B017B
+https://1drv.ms/f/s!AnsBG48pXHjRhTswfMaCmzE-NEfc
 
