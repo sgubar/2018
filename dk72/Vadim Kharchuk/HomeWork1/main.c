@@ -1,35 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-//Function for calculation Module
-float ModuleFromValue (float denominator)
-{	
-	float module;
-	if(denominator < 0)
-	denominator *= -1;
-	else module = denominator;
-	return module;
-}
-
-//Function for calculation Factorial
-int Factorial (int FirstValue)
-{		printf("In function");
-    int factorial;
-    printf("%d",FirstValue);
-	int i = 0;
-	while(i <= FirstValue)
-		{
-		factorial *= i;	
-		i++;
-	}   
-		printf("Out");	
-	return factorial;
-}
-
+#include "HWtool.h"
 
 int main(int argc, char *argv[]) {
 	
-	int FirstValue , SecondValue, FactorialValue = 0;
+	int FirstValue , SecondValue, FactorialValue;
 	float denominator , Result, denominatorModule;
 	
 	//Work with User 
@@ -40,11 +15,9 @@ int main(int argc, char *argv[]) {
     
     //Formula calculation
     denominator = (2 * FirstValue) + SecondValue;
-  //  printf("denominator = %f\n",denominator);
    denominatorModule = ModuleFromValue(denominator);
-   printf("DenModule :%f",denominatorModule);
    FactorialValue = Factorial(FirstValue);
-   printf("DenModule :%f",FactorialValue);
+   
     //Stupid check
     	if (denominatorModule == 0 )
     		{
@@ -53,6 +26,6 @@ int main(int argc, char *argv[]) {
 		else
 			{
 				Result = FactorialValue / denominatorModule;
-				printf("U Result =  %f \n");	
+				printf("U Result =  %.2f \n",Result);	
 			}
 }
