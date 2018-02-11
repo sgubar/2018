@@ -15,7 +15,7 @@ if(c==0)
     printf("OOh No it's impossible\n");
     return 0;
 }
- q=(module((a*c)-b)/ (float)cub(c));
+ q=(module((a*c)-b)/ (float)cub(c))*summa(a);
 
 printf("The variable q is %.2f\n",q);
 }
