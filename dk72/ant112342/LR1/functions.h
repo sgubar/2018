@@ -1,7 +1,7 @@
 #include<stdio.h>
-int i;
 float power(int n)
 {
+  int i;
   float s=2.0;
     if(n==0)
      {
@@ -37,11 +37,12 @@ int module(float c)
     }
 float summa(int n)
 {
+  int j;
    if(n>0)
     {
     int m=1;
     float k=0;
-       for ( i=0;i<n;i++)
+       for ( j=0;j<n;j++)
             {
                k=k+m*power(i);
                 m++;
@@ -52,7 +53,7 @@ float summa(int n)
      {
        int m=-1;
         float k=0;
-           for ( i=0;i<n;i--)
+           for ( j=0;j>n;j--)
             {
               k=k+m*power(i);
                m--;
