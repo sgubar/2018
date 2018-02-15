@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> 
+#include <stdlib.h> 
 #include <locale.h>
 #include <conio.h>
 #include "first_lab_func.h"
