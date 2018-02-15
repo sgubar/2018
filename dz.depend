@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1518647821 source:c:\users\di_ray\desktop\dz\main.c
+	<stdio.h>
+	<string.h>
+
+1518650994 source:c:\users\di_ray\desktop\dz\dk_tool.c
+
+1518644712 c:\users\di_ray\desktop\dz\dk_tool.h
+	<stdio.h>
+	<string.h>
+
+1518644362 c:\users\di_ray\desktop\dz\dk_tool.c
+
