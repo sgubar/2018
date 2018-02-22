@@ -4,7 +4,7 @@
 
 float A, B, C; //variables for input data
 int sum = 0; //result
-int i; //initialisation of counter for summ
+int i; //counter for summ
 
 int main()
 {
