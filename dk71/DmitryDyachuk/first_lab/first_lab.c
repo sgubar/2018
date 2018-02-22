@@ -29,7 +29,7 @@ int main()
     {
         value_result = scanf("%i", &variable_B);
         fflush(stdin);
-        if (value_result == 1 && variable_B >= 1)
+        if (value_result == 1 && variable_B >= 0)
         {
            printf("You have entered the value of: %i\n", variable_B);
         }else
