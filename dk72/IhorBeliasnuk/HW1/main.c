@@ -4,16 +4,22 @@
 
 int main()
 {
-    int i = 0, j = 0;
+int i = 0, j = 0;
     int SIZE = 0;
 
-    printf("Enter size of your matrix:\n"); //request the size of matrix
+    int matrix1[SIZE][SIZE];
+    int matrix2[SIZE][SIZE];
+    int resultingMatrix[SIZE][SIZE];
+
+
+    printf("Enter size of your matrix:\n");
     scanf("%i", &SIZE);
-
-    int matrix1[SIZE][SIZE];        //
-    int matrix2[SIZE][SIZE];        //declare incoming and resulting matrixes
-    int resultingMatrix[SIZE][SIZE];//
-
+    while(SIZE <= 1)
+    {
+        printf("The size can not be less than or equal to one. Enter correct value:\n");
+        scanf("%i", &SIZE);
+    }
+    
     printf("\nEnter first matrix:\n\n");
 
     for(i = 0; i < SIZE; i++) //using "for" loop for assign values to cells of matrix
