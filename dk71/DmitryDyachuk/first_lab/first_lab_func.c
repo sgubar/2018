@@ -3,11 +3,17 @@
 int factorial(int factorial_value) // function for calculating output of factorial.
 {
     int output_value = 1;
-    while(factorial_value != 1)
+    if(factorial_value == 0)
     {
-        output_value *= factorial_value;
-        factorial_value--;
-    }
+        output_value = 0;
+    }else
+        {
+            while(factorial_value != 1)
+            {
+                output_value *= factorial_value;
+                factorial_value--;
+            }
+        }
     return output_value;
 }
 
@@ -38,7 +44,7 @@ int C_degree(int C_value) // function for calculating output the C-th power.
         C_value--;
     }
     if(C_value == 0)
-        result_of_C_degree *= 0;
+        result_of_C_degree = 1;
     return result_of_C_degree;
 }
 
