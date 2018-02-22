@@ -16,11 +16,11 @@ void enter_args(arguments* in){
 void get_int(int* a){
 	regex_t pattern;
 	char* str = malloc(64);
-	scanf("%s",str);
+	scanf("%s", str);
 	regcomp(&pattern, "-?[0-9]+", REG_EXTENDED | REG_NOSUB);
 	while(regexec(&pattern, str, 0, NULL, 0)){
 		printf("Retry: ");
-		scanf("%s",str);
+		scanf("%s", str);
 	}
 	*a = atoi(str);
 	regfree(&pattern);
@@ -40,7 +40,7 @@ int fact(int num){
 double powi(int num, int power){
 
 	int result = 1;
-	int apow = (power>=0)?power:-power; 
+	int apow = (power>=0)? power : -power; 
 
 	if(power==0){return 1;}
 

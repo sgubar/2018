@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <regex.h>
 
 
 typedef unsigned int uint;
