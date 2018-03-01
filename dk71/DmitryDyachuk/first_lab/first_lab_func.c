@@ -4,9 +4,7 @@ int factorial(int factorial_value) // function for calculating output of factori
 {
     int output_value = 1;
     if(factorial_value == 0)
-    {
-        output_value = 0;
-    }else
+    {}else
         {
             while(factorial_value != 1)
             {
