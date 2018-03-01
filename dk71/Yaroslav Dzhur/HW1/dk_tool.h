@@ -5,4 +5,4 @@
 
 void subtractedmatrix(int n, int matrixC[n][n], int matrixA[n][n], int matrixB[n][n]);
 
-#endif //HW1_DK_TOOL_H
+#endif
