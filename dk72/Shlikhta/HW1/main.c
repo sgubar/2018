@@ -22,10 +22,10 @@ int main(void)
 			//checking for correct entering
 			for(int i = 0; data[i] != '\0'; i++)
 			{
-				if(data[i] < 48 || 
-				(data[i] > 57 && data[i] < 65) || 
-				(data[i] > 70 && data[i] < 97) || 
-				data[i] > 102)
+				if(data[i] < '0' || 
+				(data[i] > '9' && data[i] < 'A') || 
+				(data[i] > 'F' && data[i] < 'a') || 
+				data[i] > 'f')
 				{ 
 					printf("%c ERR\n", data[i]); 
 					flag = 0;
