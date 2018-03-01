@@ -1,0 +1,13 @@
+#ifndef dk_tool.h
+#define dk_tool.h
+
+float sum(float a, float b);
+float div(float a, float b);
+float drib(float a);
+float step(float a, float b);
+float step10(float a);
+float s(float r);
+float l(float r);
+float fact(int a);
+
+#endif

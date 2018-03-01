@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+#include "dk_tool.h"
+
+float sum(float a, float b) {
+	return a + b;
+}
+
+float div(float a, float b) {
+	return a / b;
+}
+
+float drib(float a) {
+	return 1 / a;
+}
+
+float step(float a, float b) {
+	return pow(a, b);
+}
+
+float step10(float a) {
+	return pow(10, a);
+}
+
+float s(float r) {
+	return pi * pow(r, 2);
+}
+
+float l(float r) {
+	return 2 * pi * r;
+}
+
+float fact(int a) {
+    if (a == 0) {
+        return 1;
+    }
+    return a * fact(a - 1);
+}
