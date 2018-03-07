@@ -3,15 +3,14 @@
 int factorial(int factorial_value) // function for calculating output of factorial.
 {
     int output_value = 1;
-    if(factorial_value == 0)
-    {}else
-        {
-            while(factorial_value != 1)
+    if(factorial_value != 0)
+    {
+         while(factorial_value != 1)
             {
                 output_value *= factorial_value;
                 factorial_value--;
             }
-        }
+    }
     return output_value;
 }
 
@@ -36,21 +35,23 @@ int denominator(int denominator_B, int denominator_C) // function for calculatin
 int C_degree(int C_value) // function for calculating output the C-th power.
 {
     int result_of_C_degree = 5;
-    while(C_value >= 2)
-    {
-        result_of_C_degree *= 5;
-        C_value--;
-    }
     if(C_value == 0)
-        result_of_C_degree = 1;
+        {
+            result_of_C_degree = 1;
+        }else
+        {
+            while(C_value >= 2)
+            {
+                result_of_C_degree *= 5;
+                C_value--;
+            }
+        }
     return result_of_C_degree;
 }
 
-float all_expression(int factorial_result, float numerator_result, float denominator_resut)  // function for calculating output of all expression.
+float all_expression(int factorial_result, int numerator_result, float denominator_resut)  // function for calculating output of all expression.
 {
     float division_of_expression = numerator_result / denominator_resut;
     float sum_of_expression = division_of_expression + factorial_result;
     return sum_of_expression;
-
 }
-
