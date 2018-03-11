@@ -18,3 +18,13 @@ int ntr_vl_fnc(int strng, int clmn)
             }while(vl_rslt != 1);
         return ntr_vl;
 }
+
+void output_matrix(int matrix[], int strngs, int num_comp)
+{
+    for(int i = 0; i < num_comp; ++i)
+    {
+        if(i != 0 && i % strngs == 0)
+            printf("\n\n\t");
+        printf("%i\t", matrix[i]);
+    }
+}

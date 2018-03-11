@@ -5,10 +5,9 @@ int sum(int B)
 	int sum;
 	int D=0;
 	int fullsum=0;
-      for(D;D<=B;D++)
+      for(;D<=B;D++)
 	  {
-	  	sum=0+D;
-	
+	  	sum=D;	
 		fullsum = fullsum + factorial(sum);
 	  }
 		
