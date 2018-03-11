@@ -49,7 +49,7 @@ int main()
         {
            printf("Your value does not meet the condition of this programm or there is no such degree.\nPlease try again:\nC = ");
         }
-    }while(value_result != 1 || variable_B < 0);
+    }while(value_result != 1 || variable_С < 0);
     printf("\n\t(%i^2) + (%i^2)\n\t------------- + %i!\n\t  %i + (5^%i)\n\n", variable_A, variable_B, variable_B, variable_B, variable_C);
     int output_factorial = factorial(variable_B);
     int output_numerator = numerator(variable_A, variable_B);
