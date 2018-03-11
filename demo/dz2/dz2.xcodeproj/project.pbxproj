@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7398138320483BFE0050A5F7 /* dk_tool.c in Sources */ = {isa = PBXBuildFile; fileRef = 7398138020483BFE0050A5F7 /* dk_tool.c */; };
-		7398138420483BFE0050A5F7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 7398138220483BFE0050A5F7 /* main.c */; };
 		73F4D5E4203598D000B0DB96 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F4D5E3203598D000B0DB96 /* main.c */; };
 		73F4D5EC2035A4FC00B0DB96 /* dk_line.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F4D5EB2035A4FC00B0DB96 /* dk_line.c */; };
 /* End PBXBuildFile section */
@@ -26,9 +24,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7398138020483BFE0050A5F7 /* dk_tool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dk_tool.c; path = "../../../dk71/Yaroslav Dzhur/HW1/dk_tool.c"; sourceTree = "<group>"; };
-		7398138120483BFE0050A5F7 /* dk_tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dk_tool.h; path = "../../../dk71/Yaroslav Dzhur/HW1/dk_tool.h"; sourceTree = "<group>"; };
-		7398138220483BFE0050A5F7 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = "../../../dk71/Yaroslav Dzhur/HW1/main.c"; sourceTree = "<group>"; };
 		73F4D5E0203598D000B0DB96 /* dz2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dz2; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F4D5E3203598D000B0DB96 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		73F4D5EA2035A4FC00B0DB96 /* dk_line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dk_line.h; sourceTree = "<group>"; };
@@ -68,9 +63,6 @@
 				73F4D5E3203598D000B0DB96 /* main.c */,
 				73F4D5EA2035A4FC00B0DB96 /* dk_line.h */,
 				73F4D5EB2035A4FC00B0DB96 /* dk_line.c */,
-				7398138020483BFE0050A5F7 /* dk_tool.c */,
-				7398138120483BFE0050A5F7 /* dk_tool.h */,
-				7398138220483BFE0050A5F7 /* main.c */,
 			);
 			path = dz2;
 			sourceTree = "<group>";
@@ -132,9 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7398138420483BFE0050A5F7 /* main.c in Sources */,
 				73F4D5EC2035A4FC00B0DB96 /* dk_line.c in Sources */,
-				7398138320483BFE0050A5F7 /* dk_tool.c in Sources */,
 				73F4D5E4203598D000B0DB96 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
