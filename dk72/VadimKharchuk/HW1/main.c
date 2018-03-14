@@ -1,10 +1,9 @@
-#include <conio.h>
-#include <stdio.h>
 
+#include <stdio.h>
 #include "HWtool.h"
-int main()
-{
-    char str[] = "sojijiso";
-    Seach(str);
+int main() {
+    char *str = "dxsovDlsovsdaweqsdsodlsdsllsogsodsd";
+    char *WhatFind = "so";
+    Search(str,WhatFind);
     return 0;
 }
