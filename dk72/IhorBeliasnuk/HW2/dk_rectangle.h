@@ -2,12 +2,12 @@
 // Created by Ihor on 12.03.2018.
 //
 
+#ifndef UNTITLED_DK_RECTANGLE_H
+#define UNTITLED_DK_RECTANGLE_H
+
 #include <stdio.h>
 #include <malloc.h>
 #include <math.h>
-
-#ifndef UNTITLED_DK_RECTANGLE_H
-#define UNTITLED_DK_RECTANGLE_H
 
 typedef struct tagPoint
 {
