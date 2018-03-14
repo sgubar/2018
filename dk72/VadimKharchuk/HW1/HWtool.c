@@ -1,23 +1,27 @@
 //
-//H_W_tool.h
+// Created by vadim on 12.03.2018.
 //
-//hw1
-//
-//Created by Vadim Kharhuk on 2/09/18.
-//
-//Copyright © 2018 Vadim Kharchuk. All rights reserved.
-
 #include "HWtool.h"
-#include <stdio.h>
-void Seach(char str[])
+#include "stdio.h"
+void Search(char *str, char *WhatFind)
 {
-    char strFind[] = "so";
-    int k  = strFind[0]+strFind[1];
-    int j = 0;
-    for (int i=0; str[i] != '\0';i++){
-        if(str[i]+str[i+1] == k) {
-            j++;
+  int CONST =0;
+    int i ,j,number = 0;
+    int Rezult=0;
+    for(i = 0, j = 0; str[i] !='\0'  ; i++, j++)
+    {
+
+        if(str[i] == WhatFind[j])
+        {
+            CONST ++;
+            if(WhatFind[j+1]== '\0')
+                Rezult++;
+        }
+        else
+        {
+            j = -1;
         }
     }
-    printf("%d",j);
+
+    printf("%d",Rezult);
 }
