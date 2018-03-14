@@ -12,7 +12,7 @@ int main()
 	{
 		printf("\nEnter integer A - ");    
 		scanf("%d",&a);
-		printf("Enter integer B<0 - ");                                                                       //interview
+		printf("Enter integer B>0 - ");                                                                       //interview
 		scanf("%d",&b);
 		do
 			{
