@@ -23,3 +23,4 @@ for (int D=0; D<=C; D++)
 return SummaFaktorialov;
 }
 
+
