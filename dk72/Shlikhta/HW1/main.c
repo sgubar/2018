@@ -15,7 +15,7 @@ int main(void)
 		{
 			//entering data
 			printf("Enter a hexademical numeric(x or X for exit): "); //if you enter "x" or "X" program will end
-			scanf("%4s", &data); //5th symbol and more don't read
+			scanf("%4s", data); //5th symbol and more don't read
 		
 			if(data[0] == 'x' || data[0] == 'X'){ flag = 2; break; } //special for exit
 			
