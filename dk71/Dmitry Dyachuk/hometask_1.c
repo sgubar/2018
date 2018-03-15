@@ -48,8 +48,10 @@ int main()
         }
     printf("\n- Your matrix has the next components:\n\t");
     output_matrix(mtrx, clmn_vl, num_of_components);
+    free(mtrx);
     printf("\n\n- Transposing by programm matrix is: [%i][%i]\n\n- And has the next components:\n\t", clmn_vl, strng_vl);
     output_matrix(tr_mtrx, strng_vl, num_of_components);
+    free(tr_mtrx);
     printf("\n");
     return 0;
 }
