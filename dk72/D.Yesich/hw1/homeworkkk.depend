@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1520605556 source:c:\users\ֲÿקוסכאג\desktop\re\homeworkkk\liberty.c
+	"liberty.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1520605556 c:\users\ֲÿקוסכאג\desktop\re\homeworkkk\liberty.h
+
+1520608386 source:c:\users\ֲÿקוסכאג\desktop\re\homeworkkk\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"liberty.h"
+
