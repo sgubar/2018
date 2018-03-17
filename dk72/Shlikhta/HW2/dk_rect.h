@@ -6,7 +6,6 @@
 #include <stdlib.h>
 
 
-
 typedef struct pnt
 {
 	float x, y;
@@ -25,5 +24,11 @@ ppoint enter_data();
 void print_param(ppoint par_rect);
 
 void deleting(ppoint del_rect);
+
+void print_coord_point(ppoint n_rect, int n_point);
+
+void enter_coord_point(ppoint en_rect, int en_point);
+
+float ret_point(ppoint r_rect, int rpoint, char rtoc);
 
 #endif
