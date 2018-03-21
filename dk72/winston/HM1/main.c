@@ -2,34 +2,16 @@
 #include <stdlib.h>
 #include "dk_matrix_minus.h"
 
-
-
-
-int main ()
+int main(int argc, char const *argv[])
 {
-        int *c;
-        int *b;
-        int *a;
-        int i, j, n, m, l, o, h, t;
 
+	int x,y; /* Length of arrays and columns */
+	printf("\nEnter arrays and columns for matrix:\n");
+	scanf("%d %d",&x,&y);
+	int *f = matr(x,y), *a = matr(x,y);
+	printf("\nThe result of minus matrix is:\n");
 
-        printf("Enter arrows: \n");
-        scanf("%d", &n);
-        printf("Enter columns: \n");
-        scanf("%d", &m);
+    prmin(f,a,x,y); /* Conclusion of minus matrix */
 
-
-        yourmatr1(a, m, n);
-
-        printf("Enter arrows: \n");
-        scanf("%d", &l);
-        printf("Enter columns: \n");
-        scanf("%d", &o);
-
-
-        yourmatr2(b, l, o);
-
-        printf("\n\n    The result of subtraction matrix:\n");
-
-        yourmatr3(c, h, t);
+	return 0;
 }
