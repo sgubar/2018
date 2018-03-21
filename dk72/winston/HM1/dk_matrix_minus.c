@@ -1,42 +1,52 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <malloc.h>
 #include <stdlib.h>
-#include "dk_matrix_minus.h"
+#include "funcy.h"
 
 
-int i, j, n, m;
+int** yourmatr1(int a)
 
+{
+    int i, j, n, m;
+    a = (int **)malloc(m*n * sizeof(int *));
 
-// Выделение памяти
-  a = (int*)malloc(n*m * sizeof(int));
-
-
-  void entermatr1(a)
+    if (a != NULL)
   {
-      // Ввод элементов массива
-  for (i = 0; i<n; i++)  // цикл по строкам
-  {
-    for (j = 0; j<m; j++)  // цикл по столбцам
-    {
-      printf("a[%d][%d] = ", i, j);
-      scanf("%d", (a + i*m + j));
-    }
-  }
-  return a;
-  }
+        for (i = 0; i<n; i++)
 
-  b = (int*)malloc(n*m * sizeof(int));
-    void entermatr2(a)
-  {
-      // Ввод элементов массива
-  for (i = 0; i<n; i++)  // цикл по строкам
-  {
-    for (j = 0; j<m; j++)  // цикл по столбцам
-    {
-      printf("b[%d][%d] = ", i, j);
-      scanf("%d", (b + i*m + j));
-    }
+                {
+                    for (j = 0; j<m; j++)
+
+                        {
+                              printf("a[%d][%d] = ", i, j);
+                              scanf("%d", (a + i*m + j));
+                        }
+                }
+
+                printf("\n");
+
+        for (i = 0; i<n; i++)
+                {
+
+                    for (j = 0; j<m; j++)
+
+                        {
+                                printf("%5d ", (a + i*m + j));
+
+                        }
+                                printf("\n");
+
+                }
+
+                        free(a);
+                        getchar();
+
+
   }
-  return a;
-  }
+  else
+    a = NULL;
+
+
+
+    return a;
+}
+
