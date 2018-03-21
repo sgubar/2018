@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "funcy.h"
+#include "dk_matrix_minus.h"
 
 
 int** yourmatr1(int a)
