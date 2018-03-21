@@ -1,33 +1,51 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include <malloc.h>
-#include <stdlib.h>
-#include "dk_matrix_minus.h"
-
-
-int main()
+int main ()
 {
-    int *a; // указатель на массив
-    int *b;
-    int *c;
-    int i, j, n, m;
-  system("chcp 1251>nul");
-  system("cls");
-  printf("Введите количество строк: ");
-  scanf("%d", &n);
-  printf("Введите количество столбцов: ");
-  scanf("%d", &m);
-
-  entermatr1(a);
-
-  i=0;
-  j=0;
-
-  entermatr2(b);
+        int *a;
+        int i, j, n, m;
 
 
+        printf("Enter arrows: \n");
+        scanf("%d", &n);
+        printf("Enter columns: \n");
+        scanf("%d", &m);
 
-  free(a);
-  getchar();   getchar();
-  return 0;
+
+        yourmatr1(a);
+
+        /*a = (int **)malloc(m*n * sizeof(int *));
+
+        if (a != NULL)
+  {
+        for (i = 0; i<n; i++)
+
+                {
+                    for (j = 0; j<m; j++)
+
+                        {
+                              printf("a[%d][%d] = ", i, j);
+                              scanf("%d", (a + i*m + j));
+                        }
+                }
+
+                printf("\n");
+
+        for (i = 0; i<n; i++)
+                {
+
+                    for (j = 0; j<m; j++)
+
+                        {
+                                printf("%5d ", *(a + i*m + j));
+
+                        }
+                                printf("\n");
+
+                }
+
+                        free(a);
+                        getchar();
+
+
+  }
+*/
 }
