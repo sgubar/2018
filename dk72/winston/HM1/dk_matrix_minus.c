@@ -3,146 +3,97 @@
 #include "dk_matrix_minus.h"
 
 
-int **yourmatr1(int **a, int m, int n)
+int* matr(int x, int y)    /* function of enter matrix */
+{
+
+	int* m = malloc(x*y*sizeof(int));  /* Allocating memory for matrix */
+	for (int i = 0; i < y; ++i)
+	{
+		for (int j = 0; j < x; ++j)
+		{
+			printf("enter cell [%d][%d]\n", i,j);
+			scanf("%d",(m+i*y+j));
+		}
+		printf("\n");
+	}
+
+	return m;
+
+}
+
+void prm(int* a, int x, int y)      /* Сonclusion of matrix*/
 
 {
-    int i, j;
-    a = (int **)malloc(m*n * sizeof(int *));
+	for (int i = 0; i < y; ++i)
+	{
+		for (int j = 0; j < x; ++j)
+		{
+			printf("%2d", *(a+i*y+j));
+		}
+		printf("\n");
+	}
 
-    if (a != NULL)
-  {
-        for (i = 0; i<n; i++)
+}
 
-                {
-                    for (j = 0; j<m; j++)
-
-                        {
-                              printf("a[%d][%d] = ", i, j);
-                              scanf("%d", (a + i*m + j));
-                        }
-                }
-
-                printf("\n");
-
-        for (i = 0; i<n; i++)
-                {
-
-                    for (j = 0; j<m; j++)
-
-                        {
-                                printf("%5d ", *(a + i*m + j));
-
-                        }
-                                printf("\n");
-
-                }
-
-                        free(a);
-                        getchar();
+int* minuss(int* f, int* a, int x, int y) /* Function of minus matrix */
+{
 
 
-  }
-  else
-    a = NULL;
+	int* m = malloc(x*y*sizeof(int)); /* Allocating memory for matrix */
+	for (int i = 0; i < y; ++i)
+	{
+		for (int j = 0; j < x; ++j)
+		{
 
-    return a;
+			*(m+i*y+j) = *(f+i*y+j) - *(a+i*y+j); /* Formula of minus matrix 1 - matrix 2 */
+		}
+		printf("\n");
+	}
+
+	return m;
+}
 
 
+void prmin(int* f, int* a, int x, int y)        /* Conclusion of minus matrix */
+{
+
+	int* m = malloc(x*y*sizeof(int));
+	for (int i = 0; i < y; ++i)
+	{
+		for (int j = 0; j < x; ++j)
+		{
+			*(m+i*y+j) = *(f+i*y+j) - *(a+i*y+j);
+		}
+		printf("\n");
+	}
+	for (int i = 0; i < y; ++i)
+	{
+		for (int j = 0; j < x; ++j)
+		{
+			printf("%2d", *(f+i*y+j));
+		}
+		if(i==y/2){
+			printf(" - ");
+		}else{
+			printf("   ");
+		}
+		for (int j = 0; j < x; ++j)
+		{
+			printf("%2d", *(a+i*y+j));
+		}
+		if(i==y/2){
+			printf(" = ");
+		}else{
+			printf("   ");
+		}
+		for (int j = 0; j < x; ++j)
+		{
+			printf("%2d", *(m+i*y+j));
+		}
+		printf("\n");
+
+	}
 
 
 }
 
-int **yourmatr2(int **b, int l, int o)
-
-{
-    int k, y;
-    b = (int **)malloc(l*o * sizeof(int *));
-
-    if (b != NULL)
-  {
-        for (k = 0; k<o; k++)
-
-                {
-                    for (y = 0; y<l; y++)
-
-                        {
-                              printf("b[%d][%d] = ", k, y);
-                              scanf("%d", (b + k*l + y));
-                        }
-                }
-
-                printf("\n");
-
-        for (k = 0; k<o; k++)
-                {
-
-                    for (y = 0; y<l; y++)
-
-                        {
-                                printf("%5d ", *(b + k*l + y));
-
-                        }
-                                printf("\n");
-
-                }
-
-                        free(b);
-                        getchar();
-
-
-  }
-  else
-    b = NULL;
-
-    return b;
-
-
-
-
-
-}
-
-int **yourmatr3(int **c, int h, int t)
-
-{
-    int u, p;
-    c = (int **)malloc(h*t * sizeof(int *));
-
-    if (c != NULL)
-{
-
-
-    for (u=0; u<t; h++)
-        {
-
-            for(p=0; p<h; p++)
-            {
-                yourmatr3[u][p] = yourmatr1[i][j] - yourmatr2[k][y];
-            }
-
-        }
-    for (u=0; u<t; u++)
-        {
-                    printf("\n");
-
-                    for (p=0; p<h; p++)
-
-                        {
-                            printf("  ");
-                            printf("%d", *(yourmatr3[u][p]);
-                        }
-
-                printf("\n");
-
-        }
-
-
-
-
-}
-else
-    c = NULL;
-
-    return c;
-
-}
