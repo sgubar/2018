@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-    int **yourmatr1(int **, int, int);
+int* matr(int, int );
 
-    int **yourmatr2(int **, int, int);
+int* minuss (int* , int* , int , int );
 
-    int **yourmatr3(int **, int, int);
+void prm(int* , int , int );
+
+void prmin(int* , int* , int , int );
+
