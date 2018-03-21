@@ -45,7 +45,104 @@ int **yourmatr1(int **a, int m, int n)
   else
     a = NULL;
 
-
-
     return a;
+
+
+
+
+}
+
+int **yourmatr2(int **b, int l, int o)
+
+{
+    int k, y;
+    b = (int **)malloc(l*o * sizeof(int *));
+
+    if (b != NULL)
+  {
+        for (k = 0; k<o; k++)
+
+                {
+                    for (y = 0; y<l; y++)
+
+                        {
+                              printf("b[%d][%d] = ", k, y);
+                              scanf("%d", (b + k*l + y));
+                        }
+                }
+
+                printf("\n");
+
+        for (k = 0; k<o; k++)
+                {
+
+                    for (y = 0; y<l; y++)
+
+                        {
+                                printf("%5d ", *(b + k*l + y));
+
+                        }
+                                printf("\n");
+
+                }
+
+                        free(b);
+                        getchar();
+
+
+  }
+  else
+    b = NULL;
+
+    return b;
+
+
+
+
+
+}
+
+int **yourmatr3(int **c, int h, int t)
+
+{
+    int u, p;
+    c = (int **)malloc(h*t * sizeof(int *));
+
+    if (c != NULL)
+{
+
+
+    for (u=0; u<t; h++)
+        {
+
+            for(p=0; p<h; p++)
+            {
+                yourmatr3[u][p] = yourmatr1[i][j] - yourmatr2[k][y];
+            }
+
+        }
+    for (u=0; u<t; u++)
+        {
+                    printf("\n");
+
+                    for (p=0; p<h; p++)
+
+                        {
+                            printf("  ");
+                            printf("%d", *(yourmatr3[u][p]);
+                        }
+
+                printf("\n");
+
+        }
+
+
+
+
+}
+else
+    c = NULL;
+
+    return c;
+
 }
