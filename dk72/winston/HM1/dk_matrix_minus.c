@@ -3,10 +3,10 @@
 #include "dk_matrix_minus.h"
 
 
-int** yourmatr1(int a)
+int **yourmatr1(int **a, int m, int n)
 
 {
-    int i, j, n, m;
+    int i, j;
     a = (int **)malloc(m*n * sizeof(int *));
 
     if (a != NULL)
@@ -30,7 +30,7 @@ int** yourmatr1(int a)
                     for (j = 0; j<m; j++)
 
                         {
-                                printf("%5d ", (a + i*m + j));
+                                printf("%5d ", *(a + i*m + j));
 
                         }
                                 printf("\n");
@@ -49,4 +49,3 @@ int** yourmatr1(int a)
 
     return a;
 }
-
