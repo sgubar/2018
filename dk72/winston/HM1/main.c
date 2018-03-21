@@ -1,3 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "dk_matrix_minus.h"
+
+
+
+
 int main ()
 {
         int *a;
