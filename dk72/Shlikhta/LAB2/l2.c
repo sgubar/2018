@@ -1,6 +1,6 @@
 #include "l2.h"
 
-void swap(int *s_a, int *s_b)
+inline void swap(int *s_a, int *s_b)
 {
 	int s_c = *s_a;
 	*s_a = *s_b;
@@ -12,11 +12,13 @@ int enter_arr_size()
 	int ea_size;
 	printf("Enter a size of array: ");
 	scanf("%d", &ea_size);
+	printf("You have entered: %d\n", ea_size);
 	
-	while(ea_size <= 0 || ea_size > 4096)
+	while(ea_size <= 0 || ea_size > 2000000000)
 	{
 		printf("ERR Invalid size of array:(\nEnter new: ");
 		scanf("%d", &ea_size);
+		printf("You have entered: %d\n", ea_size);
 	}
 	return ea_size;
 }
