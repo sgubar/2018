@@ -69,7 +69,12 @@ int find_min(int *fm_arr, int fm_min_broad, int fm_max_broad)
 {
 	int fm_min = fm_arr[fm_min_broad], fm_ind_min = fm_min_broad;
 	
-	for(int fm_i = fm_min_broad; fm_i < fm_max_broad; fm_i++) if(fm_min > fm_arr[fm_i]){ fm_ind_min = fm_i; fm_min = fm_arr[fm_i]; }
+	for(int fm_i = fm_min_broad; fm_i < fm_max_broad; fm_i++) 
+		if(fm_min > fm_arr[fm_i])
+		{ 
+			fm_ind_min = fm_i; 
+			fm_min = fm_arr[fm_i]; 
+		}
 	
 	return fm_ind_min;
 }
@@ -78,7 +83,12 @@ int find_max(int *fm_arr, int fm_min_broad, int fm_max_broad)
 {
 	int fm_max = fm_arr[fm_min_broad], fm_ind_max = fm_min_broad;
 	
-	for(int fm_i = fm_min_broad; fm_i < fm_max_broad; fm_i++) if(fm_max < fm_arr[fm_i]){ fm_ind_max = fm_i; fm_max = fm_arr[fm_i]; }
+	for(int fm_i = fm_min_broad; fm_i < fm_max_broad; fm_i++) 
+		if(fm_max < fm_arr[fm_i])
+		{ 
+			fm_ind_max = fm_i; 
+			fm_max = fm_arr[fm_i]; 
+		}
 	
 	return fm_ind_max;
 }
