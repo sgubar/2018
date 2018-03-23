@@ -21,14 +21,6 @@ int enter_arr_size()
 	return ea_size;
 }
 
-int ent_data_to_arr1()
-{
-	int edta;
-
-	if(rand()%2 == 1) edta = rand()%('Z' - 'A')+'A';
-		else edta = rand()%('z' - 'a')+'a';	
-}
-
 void ent_data_to_arr(int *edta_arr, int edta_size)
 {
 	for(int edta_i = 0; edta_i < edta_size; edta_i++)
