@@ -90,6 +90,10 @@ params_check validate(prtriangle2d triangle){
 		printf("len of %dst side is %.3f\n", i, sidelen[i]);
 		#endif
 	}
+	for (int i = 0; i < 3; ++i)
+	{
+		if(sidelen[i] == 0)ret=INVALID;
+	}
 	return ret;
 }
 
