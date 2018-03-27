@@ -6,7 +6,7 @@
 //  Copyright © 2018 Vadym Vaskovets. All rights reserved.
 //
 #include <stdio.h>
-#ifndef dk_triangle
+#ifndef dk_tool
 	#define dk_triangle
 
 typedef struct tagPoint
