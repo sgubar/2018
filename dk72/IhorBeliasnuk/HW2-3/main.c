@@ -29,6 +29,10 @@ int main()
     writeArrayToJSON(file, RectBase);
 
     freeArray(RectBase);
+    
+    fflush(file);
+    
+    fclose(file);
 }
 
 
