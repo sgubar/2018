@@ -1,28 +1,40 @@
 #include <stdio.h>
 #include "dk_line.h"
+#include "Math.h"
 
 int main(int argc, const char * argv[])
 {
-	int x1, x2, x3, y1, y2, y3;
-	printf("enter the coordinates of point A: ");
-	scanf("%d,%d",&x1,&y1);
-	printf("enter the coordinates of point B: ");
-	scanf("%d,%d",&x2,&y2);
-	printf("enter the coordinates of point C: ");
-	scanf("%d,%d",&x3,&y3);
-	Point A = {x1,y1};
-	Point B = {x2,y2};
-	Point C = {x3,y3};
+	int xA, yA, xB, yB, xC, yC, xD, yD;
+	printf("enter the coordinates of point A(x,y):");
+	scanf("%d,%d",&xA,&yA);
+	printf("enter the coordinates of point B(x,y):");
+	scanf("%d,%d",&xB,&yB);
+	printf("enter the coordinates of point C(x,y):");
+	scanf("%d,%d",&xC,&yC);
+	while(pow(xA-xB,2)+pow(yA-yB,2)+pow(xC-xB,2)+pow(yC-yB,2)!=pow(xA-xC,2)+pow(yA-yC,2) ||
+            pow(xA-xB,2)+pow(yA-yB,2)!=pow(xC-xB,2)+pow(yC-yB,2))
+    {
+      	printf("incorrectly entered data !! try again ..\n") ; 
+		printf("enter the coordinates of point C(x,y):");
+		scanf("%d,%d",&xC,&yC);    	
+	}
+	xD=(xA+xC)-xB;
+    yD=(yA+yC)-yB;
+    
+	Point A = {xA,yA};
+	Point B = {xB,yB};
+	Point C = {xC,yC};
+	Point D = {xD,yD};
 	
-	Square *ABC = createSquare(&A, &B, &C);
+	Square *ABCD = createSquare(&A, &B, &C, &D);
 
-	printSquare(ABC);
+	printSquare(ABCD);
 
-	printf("The area of square ABC = %f\n", areaSquare(ABC));
-	
+	printf("The area of square ABCD = %f\n", areaSquare(ABCD));
+
 	// insert code here...
-	printf("Hello, World!\n");
+	printf("code finished work...\n");
 
-	destroySquare(ABC);
+	destroySquare(ABCD);
 	return 0;
 }
