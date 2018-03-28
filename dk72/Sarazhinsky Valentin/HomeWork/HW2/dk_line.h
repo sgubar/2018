@@ -10,23 +10,18 @@ typedef struct tagPoint
 	int y;
 }Point;
 
-// Line description
-typedef struct tagLine
-{
-	Point *A;
-	Point *B;
-}Line;
-
-// square description
+// Square description
 typedef struct tagSquare
 {
 	Point *A;
 	Point *B;
 	Point *C;
-} Square;
+	Point *D;
+}Square;
 
 // Init interface
-Square *createSquare(Point *A, Point *B, Point *C);
+
+Square *createSquare(Point *A, Point *B, Point *C, Point *D;);
 void destroySquare(Square *aSquare);
 
 float areaSquare(Square *aSquare);
