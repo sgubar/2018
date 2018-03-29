@@ -7,7 +7,7 @@
 //
 #include <stdio.h>
 #ifndef dk_tool
-	#define dk_triangle
+	#define dk_tool
 
 typedef struct tagPoint
 	{
