@@ -5,11 +5,12 @@
 #include <time.h>
 
 void swap (int *element1Ptr, int *element2Ptr);
-void selectionSort(int values[], int n);
-void bubbleSort(int *,int);
+void selectionSort(int values[], long n);
+void bubbleSort(int *,long);
 void swap (int*, int *);
-void insertionSort(int array[], int size);
-void Random(int * ,int );
-void printArrToFile(int array[], int size, char* name);
+void insertionSort(int array[], long size);
+void Random(int * ,long );
+void printArrToFile(int array[], long size, char* name);
+long ValueCheck();
 
 #endif //LW2_TOOLS_H
