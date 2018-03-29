@@ -9,7 +9,7 @@ void swap (int *element1Ptr, int *element2Ptr)
     *element2Ptr = temp;
 }
 
-void selectionSort(int array[], int size)
+void selectionSort(int array[], long size)
 {
     unsigned int start_time =  clock();
     for (int i = 0; i < size; i++) {
@@ -26,11 +26,10 @@ void selectionSort(int array[], int size)
     printf("Sorting time : %d ms", sort_time);
 }
 
-void bubbleSort(int *array, int size) {
+void bubbleSort(int *array, long size) {
     int pass, j;
     unsigned int start_time =  clock();
     for (pass = 1; pass <= size - 1; pass++) {
-        //register int i;
         for (j = 0; j <= size - 2; j++) {
             if (array[j] > array[j + 1])
                 swap(&array[j], &array[j + 1]);
@@ -41,7 +40,7 @@ void bubbleSort(int *array, int size) {
     printf("Sorting time : %d ms", sort_time);
 }
 
-void insertionSort(int array[], int size)
+void insertionSort(int array[], long size)
 {
     double diff_t;
     unsigned int start_time =  clock();
@@ -61,7 +60,7 @@ void insertionSort(int array[], int size)
     printf("Sorting time : %d ms", sort_time);
 }
 
-void printArrToFile(int array[], int size, char* name) {
+void printArrToFile(int array[], long size, char* name) {
     FILE *file = fopen(name, "w");
     for (int i = 0; i < size; i++) {
         fprintf(file, "%d ", array[i]);
@@ -71,11 +70,22 @@ void printArrToFile(int array[], int size, char* name) {
     }
 }
 
-void Random(int *array, int size) {
+void Random(int *array, long size) {
     register int i;
     srand(time(NULL));
     for(i = 0; i < size; i++)
     {
         array[i] = rand() % 10000;
     }
+}
+
+long ValueCheck() {
+
+    long value;
+    while (  scanf("%ld",&value) == 0 )
+    {
+        printf("\tAre you sure used correct values? Check it, and try aggain: ");
+        while(getchar()!='\n');
+    }
+    return value;
 }
