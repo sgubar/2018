@@ -80,10 +80,6 @@ void printArrToFile(int *array, int size, char* name) {
     for (int i = 0; i < size; i++)
     {
         fprintf(file, "%c ", array[i]);
-        if (i % 50 == 0 && i != 0)
-        {
-            fprintf(file, "\n");
-        }
     }
     fclose(file);
 
