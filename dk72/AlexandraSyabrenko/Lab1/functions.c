@@ -13,9 +13,11 @@ int factorial(int number) {
 }
 
 float power(int number,int power) {
+    int result = number;
+    
     for (int i = 0; i < power - 1; i++) {
-        number *= number;
+        result *= number;
     }
     
-    return number;
+    return result;
 }
