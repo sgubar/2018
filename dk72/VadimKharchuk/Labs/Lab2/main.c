@@ -4,13 +4,13 @@
 
 int main()
 {
-    int SIZE;
+    long SIZE;
     int Choose;
     printf("Program working only with INTEGER format"
                    "Enter SIZE of Massiv - ");
-    scanf("%d",&SIZE);
 
-    int i,a[SIZE];
+    SIZE = ValueCheck();
+    int i, a[SIZE];
     Random(a, SIZE);
     printArrToFile(a, SIZE, "unsortedARR.txt");
 
@@ -19,11 +19,11 @@ int main()
                    "Write '2' For Insertion sort.\n"
                    "Write '3' For Selection sort. \n"
                    "Write there :  ");
-    scanf("%d",&Choose);
+    Choose = ValueCheck();
     while(Choose != 1 && Choose !=2 && Choose !=3)
     {
         printf("Enter value again!\n");
-        scanf("%d",&Choose);
+        Choose = ValueCheck();
     }
 
     switch(Choose)
