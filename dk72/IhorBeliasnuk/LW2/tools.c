@@ -85,6 +85,7 @@ void printArrToFile(int *array, int size, char* name) {
             fprintf(file, "\n");
         }
     }
+    fclose(file);
 
 }
 
