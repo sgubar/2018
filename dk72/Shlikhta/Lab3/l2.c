@@ -116,7 +116,7 @@ int bin_search(int *bs_arr, int bs_size, int bs_el)
 
 void quick_sort(int *qs_arr, int first, int last)
 {
-	int v, x, left, right;
+	int v, left, right;
 	
   left = first;
   right = last;
@@ -130,9 +130,7 @@ void quick_sort(int *qs_arr, int first, int last)
       
     if (left <= right)
 	{
-        x = qs_arr[left];
-        qs_arr[left] = qs_arr[right];
-        qs_arr[right] = x;
+        swap(&qs_arr[left], &qs_arr[right]);
         left++;
         right--;
 	}
