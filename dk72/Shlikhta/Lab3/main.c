@@ -13,7 +13,7 @@ int main(void)
 	write_to_file(array, ar_size, "Quick_b"); // writing to file an array before sorting
 		double start = clock();
 	quick_sort(array, 0, ar_size-1); // sorting an array
-		printf("Time of Shell sorting is %.4lf sec\n", (clock() - start) / CLOCKS_PER_SEC); //printing a time of making sorting
+		printf("Time of quick sorting is %f sec\n", (clock() - start) / CLOCKS_PER_SEC); //printing a time of making sorting
 	write_to_file(array, ar_size, "Quick_a"); // writing to file an array after sorting
 	
 	while(1)
