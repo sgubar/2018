@@ -58,6 +58,9 @@ void quick_sort_func(char * letters, int first, int last)
 	int first_element_num = first;
 	int last_element_num = last;
 	int middle_element_key = letters[(first_element_num + last_element_num) / 2];
+	long start = 0;
+    	long end = 0;
+    	start = GetTickCount();
     do
 	{
 		while(letters[first_element_num] > middle_element_key)
@@ -77,6 +80,8 @@ void quick_sort_func(char * letters, int first, int last)
 		quick_sort_func(letters, first, last_element_num);
 	if (first_element_num < last)
         quick_sort_func(letters, first_element_num, last);
+	end = GetTickCount();
+    	printf("\n\n- Quick sorting algorithm was continued %f seconds...\n\n", end - start);
 }
 
 void line_search(char * letters, int array_length)
@@ -99,6 +104,9 @@ void line_search(char * letters, int array_length)
     for(int i = 0; i < array_length; i++)
         printf("\t%c", letters[i]);
     printf("\n");
+    long start = 0;
+    long end = 0;
+    start = GetTickCount();
     for(int i = 0; i < array_length; i++)
     {
         if(desired_character == letters[i])
@@ -107,6 +115,8 @@ void line_search(char * letters, int array_length)
             num_of_desired_characters++;
         }
     }
+    end = GetTickCount();
+    printf("\n\n- Line search algorithm was continued %f seconds...\n\n", end - start);
     if(num_of_desired_characters == 0)
     {
         printf("\n- There are no characters in this array which you desire ...\n");
