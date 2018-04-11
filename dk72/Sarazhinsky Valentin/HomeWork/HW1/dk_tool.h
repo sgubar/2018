@@ -3,8 +3,8 @@
 
 #include <stdio.h>
 
-int transponation();
-int input_matrix();
-int output_matrix();
+int input_matrix(int *matrix, int lines, int columns);
+int transponation(int *matrix, int *trans_matrix, int lines, int columns);
+int output_matrix(int *trans_matrix, int lines, int columns);
 
 #endif
