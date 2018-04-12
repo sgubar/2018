@@ -6,8 +6,6 @@
 
 int main()
 {
-   FILE*file;
-   int m=5043,n=32;
-   char *words[m][n];
-read_it_from(file,words);
+   
+read_it_from();
 }
