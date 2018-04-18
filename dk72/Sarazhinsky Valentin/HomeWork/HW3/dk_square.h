@@ -1,18 +1,14 @@
-#ifndef dk_line_h
-#define dk_line_h
+#ifndef dk_square_h
+#define dk_square_h
 
 #include <stdio.h>
 
-// Point description
 typedef struct tagPoint
 {
 	int x;
 	int y;
 }Point;
 
-
-
-// Square description
 typedef struct tagSquare
 {
 	Point *A;
@@ -21,14 +17,13 @@ typedef struct tagSquare
 	Point *D;
 }Square;
 
-// Init interface
-
-Square *createSquare(Point *A, Point *B, Point *C, Point *D;);
+Square *createSquare(Point *A, Point *B, Point *C, Point *D);
 void destroySquare(Square *aSquare);
 
-float areaSquare(Square *aSquare);
-void printSquare(Square *aSquare);
-
 void writeSquareToJSON(FILE *aFile, Square *aSquare);
+void writePointToJSON(FILE *aFile, Point *aPoint);
+
+void input_coordinates (int *X, int *Y);
+void input_coordinates_C (int *X, int *Y, int A_x, int A_y, int B_x, int B_y);
 
 #endif
