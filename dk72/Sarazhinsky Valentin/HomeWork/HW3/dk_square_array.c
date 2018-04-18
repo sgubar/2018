@@ -1,20 +1,20 @@
 #include "dk_square_array.h"
 #include <stdlib.h>
 
-// init/dealloc
+
 SquareArray *createArray(int aNumber)
 {
 	SquareArray *theResult = NULL;
-	
+
 	if (aNumber > 0)
 	{
 		theResult = (SquareArray *)malloc(sizeof(SquareArray));
-	
+
 		if (NULL != theResult)
 		{
-			theResult->squares = (Square **)malloc(sizeof(Square *)*aNumber);
-		
-			if (NULL != theResult->squares)
+			theResult->Squares = (Square **)malloc(sizeof(Square *)*aNumber);
+
+			if (NULL != theResult->Squares)
 			{
 				theResult->number = aNumber;
 				theResult->count = 0;
@@ -26,41 +26,39 @@ SquareArray *createArray(int aNumber)
 			}
 		}
 	}
-	
+
 	return theResult;
 }
 
 void freeArray(SquareArray *anArray)
 {
-	int i = 0;
+	int i;
 	if (NULL != anArray)
 	{
-		for (i = 0; i < anArray->count; i ++)
+		for ( i = 0; i < anArray->count; i ++)
 		{
-			destroySquare(anArray->squares[i]);
+			destroySquare(anArray->Squares[i]);
 		}
-	
-		free(anArray->squares);
+
+		free(anArray->Squares);
 		free(anArray);
 	}
 }
 
-//interface
-//returns index of added element OR -1 if fail
 int addElement(SquareArray *anArray, Square *aSquare)
 {
 	int theResult = -1;
-	
+
 	if (NULL != anArray && NULL != aSquare &&
 				anArray->count < anArray->number)
 	{
-		anArray->squares[anArray->count] =
-					createSquare(aSquare->A, aSquare->B);
-	
+		anArray->Squares[anArray->count] =
+					createSquare(aSquare->A, aSquare->B, aSquare->C,aSquare->D);
+
 		theResult = anArray->count;
 		anArray->count ++;
 	}
-	
+
 	return theResult;
 }
 
@@ -71,21 +69,21 @@ void writeArrayToJSON(FILE *aFile, SquareArray *anArray)
 	{
 		return ;
 	}
-	
-	fprintf(aFile, "{\n\"number\" : %d,\n\"count\" : %d,\n",
+
+	fprintf(aFile, "{\n   \"number\" : %d,\n   \"count\" : %d,\n",
 			anArray->number, anArray->count);
-	fprintf(aFile, "\"lines\" : \n[\n");
-	
-	for (i = 0; i < anArray->count; i ++)
+	fprintf(aFile, "   \"Squares\" : \n");
+
+	for ( i = 0; i < anArray->count; i ++)
 	{
-		writeSquareToJSON(aFile, anArray->squares[i]);
-	
+		writeSquareToJSON(aFile, anArray->Squares[i]);
+
 		if (i < anArray->count - 1)
 		{
 			fprintf(aFile, ",");
 		}
 		fprintf(aFile, "\n");
 	}
-	
-	fprintf(aFile, "],\n}");
+
+	fprintf(aFile, "}");
 }
