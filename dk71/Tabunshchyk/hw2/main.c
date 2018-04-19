@@ -3,9 +3,9 @@
 
 int main()
 {
-	Point A={0,0};
-	Point B={4,0};
-	Point C={0,5};
+	Point A={9,0};
+	Point B={3,0};
+	Point C={0,0};
 	
 	
 	
