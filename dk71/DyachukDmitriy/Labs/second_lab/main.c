@@ -26,12 +26,9 @@ int main(void)
     char *letters = scan_from_file_func(array_length);
     if(*letters == NULL)
         return 1;
-    char * letters_after_bubble_sorting = malloc(array_length * sizeof(char));
-    letters_after_bubble_sorting = bubble_sorting_func(letters, array_length);
-    char * letters_after_choice_sorting = malloc(array_length * sizeof(char));
-    letters_after_choice_sorting = choice_sorting_func(letters, array_length);
-    char * letters_after_insert_sorting = malloc(array_length * sizeof(char));
-    letters_after_insert_sorting = insert_sorting_func(letters, array_length);
+    char * letters_after_bubble_sorting = bubble_sorting_func(letters, array_length);
+    char * letters_after_choice_sorting = choice_sorting_func(letters, array_length);
+    char * letters_after_insert_sorting = insert_sorting_func(letters, array_length); 
     if (( vl_rslt = second_write_to_file_func(letters_after_bubble_sorting, letters_after_choice_sorting, letters_after_insert_sorting, array_length) == 1))
     {
         printf("There are problems with writing to the file ...");
