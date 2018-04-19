@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1524142775 source:c:\users\di_ray\desktop\Губар прога\laba3\lab3.c
+	"lab3.h"
+
+1524133501 c:\users\di_ray\desktop\Губар прога\laba3\lab3.h
+	<stdio.h>
+	<stdlib.h>
+
+1524142630 source:c:\users\di_ray\desktop\Губар прога\laba3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lab3.h"
+
