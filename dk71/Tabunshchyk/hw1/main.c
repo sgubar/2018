@@ -3,17 +3,19 @@
 #include <math.h>
 #include <stdbool.h>
 
+#define MAX_LENGTH 4
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-#define MAX_LENGTH 4
 
 int len_end_or_delim = 0;
+
 
 bool is_valid_oct(char c)
 {
 	return c >= '0' && c <= '7';
 }
+
 
 bool is_valid_value(const char *value_oct, const int len)
 {
@@ -51,6 +53,9 @@ bool is_valid_value(const char *value_oct, const int len)
 }
 
 
+
+
+
 int main() 
 {
 	char value_oct[MAX_LENGTH];
@@ -61,7 +66,7 @@ int main()
 
 	const int len = strlen(value_oct);
 
-	if (!is_valid_value(value_oct, len))
+	if(!is_valid_value(value_oct, len))
 	{
 		printf("\n Invalid value");
 		getch();
@@ -74,9 +79,9 @@ int main()
 	int digit = 0;
 	for (i = 0; i < len; i++)
 	{
-		if (!is_floating_point)
+		if(!is_floating_point)
 		{
-			if (value_oct[i] == '.' || value_oct[i] == ',')
+			if(value_oct[i] == '.' || value_oct[i] == ',')
 			{
 				is_floating_point = true;
 				power_to = -1;
