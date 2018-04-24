@@ -58,7 +58,6 @@ bool is_valid_value(const char *value_oct, const int len)
 
 int main() 
 {
-	char value_oct[MAX_LENGTH];
 	float value_dec = 0;
 
 	printf("\n Please enter an oct value: ");
