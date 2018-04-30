@@ -41,6 +41,19 @@ void print_list(plist pl_list)
     printf("\n");
 }
 
+pnode get_node(plist gn_list, int gn_ind)
+{
+    pnode gn_tmp = gn_list->head;
+    int gn_i = 0;
+ 
+    while (gn_tmp && gn_i < gn_ind - 1) {
+        gn_tmp = gn_tmp->next;
+        gn_i++;
+    }
+ 
+    return gn_tmp;
+}
+
 void delete_list(plist dl_list) 
 {
     pnode dl_tmp = dl_list->head;
@@ -54,39 +67,9 @@ void delete_list(plist dl_list)
     dl_list = NULL;
 }
 
-pnode get_el(plist ge_list, int ge_ind) 
-{
-    pnode ge_tmp = ge_list->head;
-    int ge_i;
-	
-
-	
-    if (ge_ind < ge_list->size/2) {
-        ge_i = 0;
-        ge_tmp = ge_list->head;
-        while (ge_tmp && ge_i < ge_ind - 1) 
-		{
-            ge_tmp = ge_tmp->next;
-            ge_i++;
-        }
-    } 
-		else {
-			ge_i = ge_list->size ;
-			ge_tmp = ge_list->tail;
-			
-				while (ge_tmp && ge_i > ge_ind) 
-				{
-					ge_tmp = ge_tmp->prev;
-					ge_i--;
-				}
-    }
-	
-		return ge_tmp;
-}
-
 float get_el_data(plist ged_list, int ged_ind) 
 {
-    pnode ged_tmp = get_el(ged_list, ged_ind + 1);
+    pnode ged_tmp = get_node(ged_list, ged_ind + 1);
 	return ged_tmp->data;
 }
 
@@ -102,7 +85,7 @@ void insert_el(plist ie_list, int ie_ind, float ie_data)
 	}
 		
 		
-	pnode ie_elm = get_el(ie_list, ie_ind);
+	pnode ie_elm = get_node(ie_list, ie_ind);
     pnode ie_ins = malloc(sizeof(node));
 
     ie_ins->data = ie_data;
@@ -125,7 +108,7 @@ void insert_el(plist ie_list, int ie_ind, float ie_data)
 
 void delete_el(plist de_list, int de_ind) 
 {
-    pnode de_elm = get_el(de_list, de_ind + 1);
+    pnode de_elm = get_node(de_list, de_ind + 1);
 
     if (de_elm->prev) {
         de_elm->prev->next = de_elm->next;
@@ -167,17 +150,7 @@ void add_el_to_beg(plist aetb_list, float aetb_data)
     aetb_list->size++;
 }
 
-pnode get_node(plist gn_list, int gn_ind) {
-    pnode gn_tmp = gn_list->head;
-    int gn_i = 0;
- 
-    while (gn_tmp && gn_i < gn_ind) {
-        gn_tmp = gn_tmp->next;
-        gn_i++;
-    }
- 
-    return gn_tmp;
-}
+
 
 
 void swap(plist s_list, int s_ind1, int s_ind2)

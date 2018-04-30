@@ -28,7 +28,7 @@ void delete_list(plist dl_list);
 
 float get_el_data(plist ge_list, int ge_ind);
 
-pnode get_el(plist ge_list, int ge_ind);
+pnode get_node(plist gn_list, int gn_ind);
 
 void insert_el(plist ie_list, int ie_ind, float ie_data);
 

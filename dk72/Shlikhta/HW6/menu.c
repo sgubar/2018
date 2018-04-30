@@ -46,7 +46,7 @@ void print_the_list(plist ptl_list)
 
 void delete_an_element_from_list(plist daefl_list)
 {
-	if(pal_list->size == 0)
+	if(daefl_list->size == 0)
 	{
 		printf("\n***Err. The list don't have an elements\n");
 		return;
