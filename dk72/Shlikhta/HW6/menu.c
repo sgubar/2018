@@ -46,6 +46,11 @@ void print_the_list(plist ptl_list)
 
 void delete_an_element_from_list(plist daefl_list)
 {
+	if(pal_list->size == 0)
+	{
+		printf("\n***Err. The list don't have an elements\n");
+		return;
+	}
 	int daefl_ind;
 	printf("**Enter an index of element which you want to delete(max = %d): ", daefl_list->size - 1);
 	scanf("%d", &daefl_ind);
@@ -64,16 +69,21 @@ void delete_an_element_from_list(plist daefl_list)
 
 void insert_an_element_to_list(plist iaetl_list)
 {
-	int iaetl_ind;
+	int iaetl_ind, iaetl_tmp;
 	float iaetl_data;
 	
-	printf("**Enter an index of element which you want to insert(max = %d): ", iaetl_list->size-1);
+	if(iaetl_list->size == 0)
+		iaetl_tmp = 0;
+		else
+			iaetl_tmp = iaetl_list->size-1;
+	
+	printf("**Enter an index of element which you want to insert(max = %d): ", iaetl_tmp);
 	scanf("%d", &iaetl_ind);
 	
-	while(iaetl_ind < 0 || iaetl_ind > iaetl_list->size-1)
+	while(iaetl_ind < 0 || iaetl_ind > iaetl_tmp)
 	{
 		printf("\n***->Invalid index<-:(\nPlease try again.\n");
-		printf("**Enter an index of element which you want to insert(max = %d): ", iaetl_list->size-1);
+		printf("**Enter an index of element which you want to insert(max = %d): ", iaetl_tmp);
 		scanf("%d", &iaetl_ind);
 	}
 	
@@ -87,6 +97,11 @@ void insert_an_element_to_list(plist iaetl_list)
 
 void print_an_element(plist pal_list)
 {
+	if(pal_list->size == 0)
+	{
+		printf("\n***Err. The list don't have an elements\n");
+		return;
+	}
 	int pal_ind;
 	printf("**Enter an index of element which you want to print(max = %d): ", pal_list->size - 1);
 	scanf("%d", &pal_ind);
