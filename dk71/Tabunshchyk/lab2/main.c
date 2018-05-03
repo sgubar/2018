@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "tool.c"
+#include "tool.h"
 
 #define MAX_VALUE 10000
 
