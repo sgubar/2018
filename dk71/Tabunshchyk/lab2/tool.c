@@ -77,7 +77,7 @@ int bubble(int *array_of_numbers_main)
     for(pos = 0; pos < MAX_VALUE; pos++)
     {
     	symbol[pos] = array_of_numbers_main[pos];
-    	fprintf(bubble, "%c ", symbol[pos]);
+    	fprintf(bubble, "\n%c ", symbol[pos]);
     
 	}
 	
@@ -109,7 +109,8 @@ int insertion(int *array_of_numbers_main)
 		FILE *insertion = fopen("insertion_sorted.txt", "w");
 		for(pos = 0; pos < MAX_VALUE; pos++)
  	   	{
-    		
+    			symbol[pos] = array_of_numbers_main[pos];
+    			fprintf(bubble, "\n%c ", symbol[pos]);
 		}
 		fclose(insertion);
 		
@@ -138,7 +139,7 @@ int selection(int *array_of_numbers_main)
     	for(pos = 0; pos < MAX_VALUE; pos++)
     		{
     			symbol[pos] = array_of_numbers_main[pos];
-    			fprintf(selection, "%c ", symbol[pos]);
+    			fprintf(selection, "\n%c ", symbol[pos]);
 			}
 			fclose(selection);
 		return array_of_numbers_main;
