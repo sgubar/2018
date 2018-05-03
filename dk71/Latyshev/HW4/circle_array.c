@@ -1,19 +1,10 @@
 #include <stdio.h>
-
 #include <stdlib.h>
-
 #include <malloc.h>
-
 #include <math.h>
-
-
 
 #include "circle.h"
 #include "circle_array.h"
-
-
-
-
 
 
 
@@ -35,12 +26,10 @@ CircleArray *CreateArray(int aNumber)
 
             theResult->Circles = malloc(sizeof(Circle *)*aNumber);
 
-
             if(NULL != theResult->Circles)
 
             {
                 theResult->number = aNumber;
-
                 theResult->count = 0;
 
             }
@@ -50,7 +39,7 @@ CircleArray *CreateArray(int aNumber)
             {
 
                 free(theResult);
-
+				
                 theResult = NULL;
 
             }
@@ -70,9 +59,6 @@ CircleArray *CreateArray(int aNumber)
 
 
 void freeArray(CircleArray *InstantArray)
-
-
-
 {
 
 	int i;
@@ -100,7 +86,7 @@ void freeArray(CircleArray *InstantArray)
 
 
 
-void addElement(CircleArray *InstantArray, Circle *aCircle)
+void addElement(CircleArray *InstantArray, Circle *aCircle, float area)
 
 {
     int result = -1;
