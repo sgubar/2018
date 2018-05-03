@@ -100,7 +100,7 @@ void freeArray(CircleArray *InstantArray)
 
 
 
-void addElement(CircleArray *InstantArray, Circle *aCircle, float area)
+void addElement(CircleArray *InstantArray, Circle *aCircle)
 
 {
     int result = -1;
