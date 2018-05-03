@@ -24,7 +24,7 @@ int main(void)
 
     Circle created_Circle = {&Center, &Radius}; 
 
-    addElement(InstantArray, &created_Circle); 
+    addElement(InstantArray, &created_Circle, SquareCircle(&created_Circle)); 
 
     FILE *file = fopen("D:/work/test.json", "a+"); 
 
