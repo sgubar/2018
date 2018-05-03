@@ -15,11 +15,13 @@ int main() {
 	printf("Time of bubble sorting is %.5f sec\n\n", (clock() - start) / CLOCKS_PER_SEC);
 	  
 	start = clock();
+	count = read("read.txt", str);
 	selectionSort(str, count);
 	printf("%s\n\n", str);
 	printf("Time of selection sorting is %.5f sec\n\n", (clock() - start) / CLOCKS_PER_SEC);
 	  
 	start = clock();
+	count = read("read.txt", str);
 	insertionSort(str, count);
 	printf("%s\n\n", str);
 	printf("Time of insertion sorting is %.5f sec\n\n", (clock() - start) / CLOCKS_PER_SEC);
