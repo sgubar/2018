@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		734B5D29209B1A2000057D07 /* quickSort.c in Sources */ = {isa = PBXBuildFile; fileRef = 734B5D27209B1A2000057D07 /* quickSort.c */; };
 		735A14971E9C8A5200E64F63 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 735A14961E9C8A5200E64F63 /* main.c */; };
 		736349C71C863EE000CE89B2 /* SingleLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 736349C51C863EE000CE89B2 /* SingleLinkedList.c */; };
 		736349CA1C877E6C00CE89B2 /* SingleLinkedNode.c in Sources */ = {isa = PBXBuildFile; fileRef = 736349C81C877E6C00CE89B2 /* SingleLinkedNode.c */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		734B5D27209B1A2000057D07 /* quickSort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = quickSort.c; sourceTree = "<group>"; };
+		734B5D28209B1A2000057D07 /* quickSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quickSort.h; sourceTree = "<group>"; };
 		735A14961E9C8A5200E64F63 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		736349BB1C863E7600CE89B2 /* demoList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = demoList; sourceTree = BUILT_PRODUCTS_DIR; };
 		736349C51C863EE000CE89B2 /* SingleLinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SingleLinkedList.c; sourceTree = "<group>"; };
@@ -65,6 +68,8 @@
 			children = (
 				735A14961E9C8A5200E64F63 /* main.c */,
 				736349C51C863EE000CE89B2 /* SingleLinkedList.c */,
+				734B5D27209B1A2000057D07 /* quickSort.c */,
+				734B5D28209B1A2000057D07 /* quickSort.h */,
 				736349C61C863EE000CE89B2 /* SingleLinkedList.h */,
 				736349C81C877E6C00CE89B2 /* SingleLinkedNode.c */,
 				736349C91C877E6C00CE89B2 /* SingleLinkedNode.h */,
@@ -129,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				736349C71C863EE000CE89B2 /* SingleLinkedList.c in Sources */,
+				734B5D29209B1A2000057D07 /* quickSort.c in Sources */,
 				736349CA1C877E6C00CE89B2 /* SingleLinkedNode.c in Sources */,
 				735A14971E9C8A5200E64F63 /* main.c in Sources */,
 			);

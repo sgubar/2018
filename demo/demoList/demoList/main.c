@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include "SingleLinkedNode.h"
 #include "SingleLinkedList.h"
+#include "quickSort.h"
 
 void doTestSLList();
 void doPrintSLList(const IntList *aList);
@@ -35,6 +36,25 @@ void doTestSLList()
 
 	SLAddNode(theList, theNode4);
 	printf("number of elements: %d\n", SLCountList(theList));
+	
+	SLAddNode(theList, SLCreateNodeWithIntValue(7));
+	SLAddNode(theList, SLCreateNodeWithIntValue(8));
+
+	IntNode *theNode = SLCreateNodeWithIntValue(5);
+	
+	SLInsertNodeAtIndex(theList, theNode, 4);
+	SLInsertNodeAtIndex(theList, SLCreateNodeWithIntValue(10), 4);
+	
+	doPrintSLList(theList);
+	theNode = SLRemovedNodeAtIndex(theList, 4);
+	SLInsertNodeAtIndex(theList, theNode, 2);
+	
+
+	printf("After removing: \n");
+	doPrintSLList(theList);
+	
+	printf("Sorting: \n");
+	quickSort(theList, 0, theList->count - 1);
 	
 	doPrintSLList(theList);
 	

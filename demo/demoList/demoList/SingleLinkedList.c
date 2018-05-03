@@ -123,3 +123,108 @@ IntNode *SLNodeAtIndex(const IntList *aList, int anIndex)
 	
 	return theResult;
 }
+
+IntNode *SLInsertNodeAtIndex(IntList *aList, IntNode *aNewNode, int anIndex)
+{
+	IntNode *theResult = NULL;
+	
+	if (NULL == aList || NULL == aNewNode)
+		return NULL;
+	
+	if (anIndex < 0 || aList->count < anIndex)
+		return NULL;
+	
+	if (0 == anIndex)
+	{
+		if (NULL == aList->head && NULL == aList->tail)
+		{
+			SLAddNode(aList, aNewNode);
+			theResult = aNewNode;
+		}
+		else
+		{
+			IntNode *theHead = aList->head;
+			aList->head = aNewNode;
+			aList->head->nextNode = theHead;
+			aList->count ++;
+			theResult = aNewNode;
+		}
+	}
+	else if (aList->count == anIndex)
+	{
+		SLAddNode(aList, aNewNode);
+		theResult = aNewNode;
+	}
+	else
+	{
+		int theOwnerIndex = anIndex - 1;
+		IntNode *theOwnNode = SLNodeAtIndex(aList, theOwnerIndex);
+	
+		if (NULL != theOwnNode)
+		{
+			IntNode *theNextOwnNode = theOwnNode->nextNode;
+			theOwnNode->nextNode = aNewNode;
+			aNewNode->nextNode = theNextOwnNode;
+		
+			aList->count ++;
+			theResult = aNewNode;
+		}
+	}
+	
+	return theResult;
+}
+
+IntNode *SLRemovedNodeAtIndex(IntList *aList, int anIndex)
+{
+	IntNode *theResult = NULL;
+	
+	if (NULL == aList)
+		return NULL;
+	
+	if (anIndex < 0 || aList->count <= anIndex)
+		return NULL;
+	
+	if (0 == anIndex)
+	{
+		IntNode *theHead = aList->head;
+	
+		aList->head = aList->head->nextNode;
+		if (NULL == aList->head)
+			aList->tail = aList->head;
+	
+		aList->count --;
+		theResult = theHead;
+	}
+	else
+	{
+		IntNode *theOwnNode = SLNodeAtIndex(aList, anIndex - 1);
+		if (NULL != theOwnNode)
+		{
+			theResult = theOwnNode->nextNode;
+			theOwnNode->nextNode = theResult->nextNode;
+		
+			aList->count --;
+		
+			if (theResult == aList->tail)
+			{
+				aList->tail = theOwnNode;
+			}
+		}
+	}
+	
+	return theResult;
+}
+
+void SLSwapNodesByIndex(IntList *aList, int aLeftIndex, int aRightIndex)
+{
+	if (aLeftIndex == aRightIndex)
+		return ;
+	
+	IntNode *theLeftNode = SLNodeAtIndex(aList, aLeftIndex);
+	IntNode *theRightNode = SLNodeAtIndex(aList, aRightIndex);
+	
+	int theTmp = theLeftNode->value;
+	theLeftNode->value = theRightNode->value;
+	theRightNode->value = theTmp;
+}
+
