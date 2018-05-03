@@ -15,7 +15,7 @@ int main(void)
 	
     Circle created_Circle = {&Center, &Radius}; 
     addElement(InstantArray, &created_Circle); 
-    FILE *file = fopen("test.json", "a+"); 
+    FILE *file = fopen("D:/work/test.json", "a+"); 
     
 	writeArrayToJSON(file, InstantArray); 
 	fflush(file);
