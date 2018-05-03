@@ -10,13 +10,13 @@
 
 int countElem() {
 	int f;
-	 	printf("Введите кол-во элементов: ");
+	 	printf("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«-ГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў: ");
     	int result_A;
     		result_A = scanf("%d",&f);
 
 			while(result_A != 1 || (int)f != f  || f < 0)
 			{ 	
-				printf("\nВведите кол-во элементов заново: ");
+				printf("\nГ‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«-ГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў Г§Г Г­Г®ГўГ®: ");
 	   			result_A = scanf("%f",&f);
 	   			scanf("%*[^\n]");   	
 			}
@@ -54,14 +54,14 @@ int* fromFile()
 {
 		int* A;
 		int i,f;
-		 printf("\nФайл для считывания данных: ");
+		 printf("\nГ”Г Г©Г« Г¤Г«Гї Г±Г·ГЁГІГ»ГўГ Г­ГЁГї Г¤Г Г­Г­Г»Гµ: ");
             char *nameIn=(char *)malloc(256);
             scanf("%s",nameIn);
             FILE *fp1=fopen(nameIn,"r");
             while( (fp1=fopen(nameIn,"r")) == 0 )
             {
-                printf("\nФайл не найден!\n");
-                printf("\nФайл для считывания данных: ");
+                printf("\nГ”Г Г©Г« Г­ГҐ Г­Г Г©Г¤ГҐГ­!\n");
+                printf("\nГ”Г Г©Г« Г¤Г«Гї Г±Г·ГЁГІГ»ГўГ Г­ГЁГї Г¤Г Г­Г­Г»Гµ: ");
                 scanf("%s",nameIn);
             }
            f = countElem();
@@ -79,7 +79,7 @@ int* fromFile()
 void inFile(int* A, int f) {
 	int i;
 
-			 printf("\nФайл для сохранения данных: ");
+			 printf("\nГ”Г Г©Г« Г¤Г«Гї Г±Г®ГµГ°Г Г­ГҐГ­ГЁГї Г¤Г Г­Г­Г»Гµ: ");
             char *nameOut=(char *)malloc(256);
             scanf("%s",nameOut);
             FILE *fp2=fopen(nameOut,"w");
@@ -89,32 +89,31 @@ void inFile(int* A, int f) {
             }
             fclose(fp2);
             fflush(fp2);
-            printf("Данные успешно сохранены");
+            printf("Г„Г Г­Г­Г»ГҐ ГіГ±ГЇГҐГёГ­Г® Г±Г®ГµГ°Г Г­ГҐГ­Г»");
 }
 int* sortBuble(int* A, int f) {
 	
 	int i,j;
-clock_t start = clock();   //АААААААААААААААААААААААААААА	
+clock_t start = clock();   //ГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂ	
 	for(i = 0 ; i < f - 1; i++) { 
-       // сравниваем два соседних элемента.
+       
        for(j = 0 ; j < f - i - 1 ; j++) {  
            if(A[j] > A[j+1]) {           
-              // если они идут в неправильном порядке, то  
-              //  меняем их местами. 
+            
               int tmp = A[j];
               A[j] = A[j+1] ;
               A[j+1] = tmp; 
            }
         }
          clock_t end = clock();   double seconds = (double)(end - start) / CLOCKS_PER_SEC; 
-		 printf("Время выполнения: %f sec\n", seconds);////////аааааааааааааааа
+		 printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї: %f sec\n", seconds);////////Г Г Г Г Г Г Г Г Г Г Г Г Г Г Г Г 
     }
     return A;
 }
     int* sortPush(int* A, int f) {
 	
 	int pass, j, hold;
-clock_t start = clock();//ААААААААААААААААААААААААААААААААААААААа
+clock_t start = clock();//ГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГ 
 	for (pass = 0; pass < f-1; pass++){
 		for (j = pass+1; j < f; j++){
 			if (A[pass]>A[j]){
@@ -124,7 +123,7 @@ clock_t start = clock();//ААААААААААААААААААААААААААААААААААААААа
 			}
 		}
 		clock_t end = clock();   double seconds = (double)(end - start) / CLOCKS_PER_SEC; 
-		 printf("Время выполнения: %f sec\n", seconds);////////аааааааааааааааа
+		 printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї: %f sec\n", seconds);////////Г Г Г Г Г Г Г Г Г Г Г Г Г Г Г Г 
 	}
 
     return A;
@@ -132,22 +131,21 @@ clock_t start = clock();//ААААААААААААААААААААААААААААААААААААААа
 int* sortChoose(int* A, int f) {
 	
 	int i,j;
-	clock_t start = clock();//ААААААААААААААААААААААААААААААААААААААа
+	clock_t start = clock();//ГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГЂГ 
 	for (i = 0; i < f - 1; i++) {
-/* устанавливаем начальное значение минимального индекса */
         int min_i = i;
-	/* находим индекс минимального элемента */
+
 	for (j = i + 1; j < f; j++) {
 		if (A[j] < A[min_i]) {
 			min_i = j;
 		}
 	}
-	/* меняем значения местами */
+	
 	int temp = A[i];
 	A[i] = A[min_i];
 	A[min_i] = temp;
 	clock_t end = clock();   double seconds = (double)(end - start) / CLOCKS_PER_SEC; 
-		 printf("Время выполнения: %f sec\n", seconds);////////аааааааааааааааа
+		 printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї: %f sec\n", seconds);////////Г Г Г Г Г Г Г Г Г Г Г Г Г Г Г Г 
 }
 
     return A;
@@ -157,10 +155,10 @@ int* sortInterface(int* A, int f) {
 	int var;
 	while(finish != 1)
 	{ 	
-		printf("Сортировать: ");
-		printf("\n1. Пузырьком; ");
-		printf("\n2. Выбором; ");
-		printf("\n3. Вставкой; ");;
+		printf("Г‘Г®Г°ГІГЁГ°Г®ГўГ ГІГј: ");
+		printf("\n1. ГЏГіГ§Г»Г°ГјГЄГ®Г¬; ");
+		printf("\n2. Г‚Г»ГЎГ®Г°Г®Г¬; ");
+		printf("\n3. Г‚Г±ГІГ ГўГЄГ®Г©; ");;
 	   	scanf("%d",&var); 
 		switch (var) {
 		case 1:
@@ -195,15 +193,15 @@ void interface(void) {
 	
 	int f;
 	
-	while(finish != 1) //проверка на корректность ввода
+	while(finish != 1)
 	{ 	
-		printf("Меню: ");
-		printf("\n1. Создать/перезаписать массив с данными; ");
-		printf("\n2. Сортировать массив с данными; ");
-		printf("\n3. Записать в файл массив с данными; ");
-		printf("\n4. Получить из файла массив с данными; ");
-		printf("\n5. Вывести массив с данными на экран; ");
-		printf("\n6. Выход;\n");
+		printf("ГЊГҐГ­Гѕ: ");
+		printf("\n1. Г‘Г®Г§Г¤Г ГІГј/ГЇГҐГ°ГҐГ§Г ГЇГЁГ±Г ГІГј Г¬Г Г±Г±ГЁГў Г± Г¤Г Г­Г­Г»Г¬ГЁ; ");
+		printf("\n2. Г‘Г®Г°ГІГЁГ°Г®ГўГ ГІГј Г¬Г Г±Г±ГЁГў Г± Г¤Г Г­Г­Г»Г¬ГЁ; ");
+		printf("\n3. Г‡Г ГЇГЁГ±Г ГІГј Гў ГґГ Г©Г« Г¬Г Г±Г±ГЁГў Г± Г¤Г Г­Г­Г»Г¬ГЁ; ");
+		printf("\n4. ГЏГ®Г«ГіГ·ГЁГІГј ГЁГ§ ГґГ Г©Г«Г  Г¬Г Г±Г±ГЁГў Г± Г¤Г Г­Г­Г»Г¬ГЁ; ");
+		printf("\n5. Г‚Г»ГўГҐГ±ГІГЁ Г¬Г Г±Г±ГЁГў Г± Г¤Г Г­Г­Г»Г¬ГЁ Г­Г  ГЅГЄГ°Г Г­; ");
+		printf("\n6. Г‚Г»ГµГ®Г¤;\n");
 	   	scanf("%d",&var); 
 		switch (var) {
 		case 1:
@@ -225,7 +223,7 @@ void interface(void) {
 		 case 3:
 				if( q == 0 )
             {
-                printf("\nДанных для записи нету");
+                printf("\nГ„Г Г­Г­Г»Гµ Г¤Г«Гї Г§Г ГЇГЁГ±ГЁ Г­ГҐГІГі");
                 getch();
                 continue;
             }
