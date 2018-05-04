@@ -1,6 +1,6 @@
 #include "tool.h"
 #include <stdlib.h>
-Point *copyPointWithPoint(Point *aPoint);
+
 
 triangle *create_triangle(Point *A, Point *B, Point *C)
 {
