@@ -6,7 +6,7 @@ int main() {
 	printf("Enter matrix parameters\n Length n=");
 	scanf("%d", &n);
 	if(n<0) n*=-1;
-	printf("Ðeight m=");
+	printf("Ãeight m=");
 	scanf("%d", &m);
 	if(m<0) m*=-1;
 
@@ -34,19 +34,5 @@ int main() {
 		i++; j=0;
 	}while(i!=n);
 	
-	
-	
-	
-	
-	
-	/*
-	for (a = 0; a < y; a++) {
-		for (b = 0; b < x; b++) {
-			mn_m(y, x, arr, a, b, n);
-			printf("[%d][%d] = %d\n", a, b, arr[a][b]);
-		}
-	}
-
-*/
 	return 0;
 }
