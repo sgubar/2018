@@ -65,7 +65,7 @@ while(1)
 
 		choice = line_search(InstantArray, search);
 
-		printf("\nPosition of a triangle = %d\n\n", choice);
+		printf("\nPosition of a circle = %d\n\n", choice);
 
 		}
 		
