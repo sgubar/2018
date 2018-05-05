@@ -7,7 +7,7 @@ int main(int argc, char *argv[]) {
 	
 	float TimeStart,TimeStop;
 	int size=0, number=0;
-	char search_value="n";
+	char search_value[2];
 	size = enter_size_array();
 	char *arr = malloc (sizeof (char) * (size));
 	enter_data_to_array(arr, size);
@@ -24,13 +24,18 @@ int main(int argc, char *argv[]) {
 	write_array_in_fail(array, size, "lab3_res.txt");	
 	
 	printf("\nEnter the value to search: ");
-
+	scanf("%s",&search_value[0]);
 	
 	TimeStart = clock()/(float)CLOCKS_PER_SEC;
 	number = binary_search(array, search_value, size);
 	TimeStop = clock()/(float)CLOCKS_PER_SEC;
 	printf("\nBinary search: %f secund!\n", TimeStop-TimeStart);
-	printf("index : %d",number);
+	if(number == -1){
+		printf("value is not found \n");
+	} else {
+		printf("value is found! index : %d",number);
+	}
+	
 	free(array);
 	free(arr);
 
