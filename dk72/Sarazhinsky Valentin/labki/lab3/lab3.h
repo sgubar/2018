@@ -8,7 +8,7 @@
 #include <conio.h>
 
 void shellSort(char *anArray, int aCount);
-int binary_search(char *array, char search_value, int size);
+int binary_search(char *array, char search_value[], int size);
 
 
 
