@@ -71,8 +71,5 @@ int binary_search(char *array, char search_value[], int size)
 	if(array[average_index] == search_value[0]) 
 		return average_index;
 	else
-		return 0;
+		return -1;
 }
-
-
-
