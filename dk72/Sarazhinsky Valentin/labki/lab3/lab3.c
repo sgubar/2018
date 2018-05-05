@@ -34,7 +34,7 @@ void shellSort(char *anArray, int aCount)
 
 
 
-int binary_search(char *array, char search_value, int size)
+int binary_search(char *array, char search_value[], int size)
 {
 	int first_index = 0, last_index = size, average_index;
 	
@@ -42,26 +42,37 @@ int binary_search(char *array, char search_value, int size)
 		else average_index = last_index/2 + 1;
 	
 
-	if(array[last_index] == search_value || array[first_index] == search_value || array[average_index] == search_value) return 1;
+	if(array[last_index] == search_value[0]){
+		return last_index;
+	} else if(array[first_index] == search_value[0]){
+		return first_index;
+	} else if(array[average_index] == search_value[0]) {
+		return average_index;
+	} 
 	
 	while(last_index - first_index != 1)
 	{
-		
-		if(array[last_index] == search_value || array[first_index] == search_value || array[average_index] == search_value) return 1;
-		
-		if(array[average_index] >= search_value) last_index = average_index; 
-		if(array[average_index] < search_value) first_index = average_index; 
+		if(array[last_index] == search_value[0]){
+			return last_index;
+		} else if(array[first_index] == search_value[0]){
+			return first_index;
+		} else if(array[average_index] == search_value[0]) {
+			return average_index;
+		} 
+		if(array[average_index] >= search_value[0]) first_index = average_index; 
+		if(array[average_index] < search_value[0]) last_index = average_index; 
 		
 		if((last_index+first_index)%2 == 0) average_index = (last_index+first_index)/2 ;
 		else average_index = (last_index+first_index)/2 +1;
 		
-		if(array[average_index] == search_value) return average_index;
+		if(array[average_index] == search_value[0]) return average_index;
 	}
 	
-	if(array[average_index] == search_value) 
+	if(array[average_index] == search_value[0]) 
 		return average_index;
 	else
 		return 0;
 }
+
 
 
