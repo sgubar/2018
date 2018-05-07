@@ -113,14 +113,17 @@ void sort_vybora(SquareArray *anArray)
         anArray->areaSquare[i] = minArea;
     }
 }
-void printSquare(Square *aSquare)
+void printArray(SquareArray *anArray)
 {
-	if (NULL != aSquare)
+	if (NULL != anArray)
 	{
-		printf ("[Square]. A(%d,%d) - B(%d,%d)- C(%d,%d)- D(%d,%d)\n\n",
-					aSquare->A->x, aSquare->A->y,
-					aSquare->B->x, aSquare->B->y,
-					aSquare->C->x, aSquare->C->y,
-					aSquare->D->x, aSquare->D->y);
-	}
+		int i;
+		for(i=0 ; i< anArray->count ; i++){
+			printf ("[Square%d]. A(%d,%d) - B(%d,%d)- C(%d,%d)- D(%d,%d)\n", i+1,
+					anArray->Squares[i]->A->x, anArray->Squares[i]->A->y,
+					anArray->Squares[i]->B->x, anArray->Squares[i]->B->y,
+					anArray->Squares[i]->C->x, anArray->Squares[i]->C->y,
+					anArray->Squares[i]->D->x, anArray->Squares[i]->D->y);
+		}
+	} 
 }
