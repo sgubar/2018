@@ -57,6 +57,7 @@ do
 
 	fflush(theFile2);
 	fclose(theFile2);
+	printArray(theArray);
 
 	freeArray(theArray);
 
