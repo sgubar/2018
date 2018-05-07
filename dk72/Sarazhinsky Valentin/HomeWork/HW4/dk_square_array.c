@@ -88,25 +88,6 @@ void writeArrayToJSON(FILE *aFile, SquareArray *anArray)
 	fprintf(aFile, "]\n}");
 }
 
-
-void sort_vstavka(SquareArray *anArray)
-{
-    Square *newElement=NULL;
-    int  location,i;
-	
-    for (i = 1; i < anArray->count; i++)
-    {
-        newElement = anArray->Squares[i];
-        location = i - 1;
-        while(location >= 0 && anArray->areaSquare[location] > anArray->areaSquare[i])
-        {
-            anArray->Squares[location+1] = anArray->Squares[location];
-            location = location - 1;
-        }
-        anArray->Squares[location+1] = newElement;
-    }
-}
-
 void sort_vybora(SquareArray *anArray)
 {
     Square *temp=NULL;
