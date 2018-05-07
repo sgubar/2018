@@ -21,6 +21,6 @@ int addElement(SquareArray *anArray, Square *aSquare, float area);
 void writeArrayToJSON(FILE *aFile, SquareArray *anArray);
 
 void sort_vybora(SquareArray *anArray);
-void printSquare(Square *aSquare);
+void printArray(SquareArray *anArray);
 
 #endif
