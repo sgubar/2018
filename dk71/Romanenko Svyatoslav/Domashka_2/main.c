@@ -1,54 +1,40 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "dz_2.h"
+#include "Math.h"
 
 int main(int argc, const char * argv[])
 {
-    int A_x, A_y, B_x, B_y, C_x, C_y,D_x,D_y;
-    printf("KVADRAT\n\n");
-    printf("Vedit koordunaty tochky A:\nx=");
-    scanf("%d",&A_x);
-    printf("y=");
-    scanf("%d",&A_y);
-
-    printf("Vedit koordunaty tochky B:\nx=");
-    scanf("%d",&B_x);
-    printf("y=");
-    scanf("%d",&B_y);
-
-	printf("Vedit koordunaty tochky C:\n");
-	do
+	int xA, yA, xB, yB, xC, yC, xD, yD;
+	printf("enter the coordinates of point A(x,y):");
+	scanf("%d,%d",&xA,&yA);
+	printf("enter the coordinates of point B(x,y):");
+	scanf("%d,%d",&xB,&yB);
+	printf("enter the coordinates of point C(x,y):");
+	scanf("%d,%d",&xC,&yC);
+	while(pow(xA-xB,2)+pow(yA-yB,2)+pow(xC-xB,2)+pow(yC-yB,2)!=pow(xA-xC,2)+pow(yA-yC,2) ||
+            pow(xA-xB,2)+pow(yA-yB,2)!=pow(xC-xB,2)+pow(yC-yB,2))
     {
-        printf("x=");
-        scanf("%d",&C_x);
-        printf("y=");
-        scanf("%d",&C_y);
-        if(pow(A_x-B_x,2)+pow(A_y-B_y,2)+pow(C_x-B_x,2)+pow(C_y-B_y,2)!=pow(A_x-C_x,2)+pow(A_y-C_y,2)||
-           pow(A_x-B_x,2)+pow(A_y-B_y,2)!=pow(C_x-B_x,2)+pow(C_y-B_y,2))
-        {
-            printf("Pomylka! Nevirni koordynaty tochky C. Vedit sche raz!");
-        }
-        printf("\n");
+      	printf("incorrectly entered data !! try again ..\n") ; 
+		printf("enter the coordinates of point C(x,y):");
+		scanf("%d,%d",&xC,&yC);    	
+	}
+	xD=(xA+xC)-xB;
+    yD=(yA+yC)-yB;
+    
+	Point A = {xA,yA};
+	Point B = {xB,yB};
+	Point C = {xC,yC};
+	Point D = {xD,yD};
+	
+	Square *ABCD = createSquare(&A, &B, &C, &D);
 
-    }while( pow(A_x-B_x,2)+pow(A_y-B_y,2)+pow(C_x-B_x,2)+pow(C_y-B_y,2)!=pow(A_x-C_x,2)+pow(A_y-C_y,2) ||
-            pow(A_x-B_x,2)+pow(A_y-B_y,2)!=pow(C_x-B_x,2)+pow(C_y-B_y,2));
+	printSquare(ABCD);
 
+	printf("The area of square ABCD = %f\n", areaSquare(ABCD));
 
-    D_x=(A_x+C_x)-B_x;
-    D_y=(A_y+C_y)-B_y;
+	// insert code here...
+	printf("code finished work...\n");
 
-	Point A = {A_x,A_y};
-	Point B = {B_x,B_y};
-	Point C = {C_x,C_y};
-	Point D = {D_x,D_y};
-
-	Kvadrat *ABCD = createKvadrat(&A, &B, &C, &D);
-
-	printKvadrat(ABCD);
-
-	printf("Ploscha ABCD = %f\n", ploschaKvadrat(ABCD));
-
-	destroyKvadrat(ABCD);
-
+	destroySquare(ABCD);
 	return 0;
 }

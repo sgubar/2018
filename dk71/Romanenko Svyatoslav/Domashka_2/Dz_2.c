@@ -1,61 +1,66 @@
 #include "Dz_2.h"
+#include <stdlib.h>
+
 Point *copyPointWithPoint(Point *aPoint);
 
-Kvadrat *createKvadrat(Point *A, Point *B, Point *C, Point *D)
+
+
+Square *createSquare(Point *A, Point *B, Point *C, Point *D)
 {
-    Kvadrat *theResult = NULL;
-
-    if (NULL != A && NULL != B && NULL != C && NULL != D)
-    {
-        theResult = (Kvadrat *)malloc(sizeof(Kvadrat));
-
-        if (NULL != theResult)
-        {
-            theResult->A = copyPointWithPoint(A);
-            theResult->B = copyPointWithPoint(B);
-            theResult->C = copyPointWithPoint(C);
-            theResult->D = copyPointWithPoint(D);
-        }
-    }
-    return theResult;
-}
-
-void destroyKvadrat(Kvadrat *aKvadrat)
-{
-	if (NULL != aKvadrat)
+	Square *theResult = NULL;
+	
+	if (NULL != A && NULL != B && NULL != C && NULL != D)
 	{
-		free(aKvadrat->A);
-		free(aKvadrat->B);
-		free(aKvadrat->C);
-		free(aKvadrat->D);
-
-		free(aKvadrat);
+		theResult = (Square *)malloc(sizeof(Square));
+		if (NULL != theResult)
+		{
+			theResult->A = copyPointWithPoint(A);
+			theResult->B = copyPointWithPoint(B);
+			theResult->C = copyPointWithPoint(C);
+			theResult->D = copyPointWithPoint(D);
+		}
 	}
-}
-
-float ploschaKvadrat(Kvadrat *aKvadrat)
-{
-   float theResult = 0.0;
-
-	if (NULL != aKvadrat)
-	{
-		float dX = (aKvadrat->A->x - aKvadrat->B->x);
-		float dY = (aKvadrat->A->y - aKvadrat->B->y);
-		theResult = sqrt(dX*dX + dY*dY);
-		theResult=pow(theResult,2);
-	}
+	
 	return theResult;
 }
 
-void printKvadrat(Kvadrat *aKvadrat)
+void destroySquare(Square *aSquare)
 {
-	if (NULL != aKvadrat)
+	if (NULL != aSquare)
 	{
-		printf ("[Kvadrat]. A(%d,%d) - B(%d,%d)- C(%d,%d)- D(%d,%d)\n\n",
-					aKvadrat->A->x, aKvadrat->A->y,
-					aKvadrat->B->x, aKvadrat->B->y,
-					aKvadrat->C->x, aKvadrat->C->y,
-					aKvadrat->D->x, aKvadrat->D->y);
+		free(aSquare->A);
+		free(aSquare->B);
+		free(aSquare->C);
+		free(aSquare->D);
+	
+		free(aSquare);
+	}
+}
+
+float areaSquare(Square *aSquare)
+{
+	float theResult = 0.0;
+	
+	if (NULL != aSquare)
+	{
+		float dX = (aSquare->A->x - aSquare->B->x);
+		float dY = (aSquare->A->y - aSquare->B->y);
+		theResult = sqrt(dX*dX + dY*dY)*sqrt(dX*dX + dY*dY);
+	}
+	
+	return theResult;
+}
+
+void printSquare(Square *aSquare)
+{
+	if (NULL != aSquare)
+	{
+		printf ("[Square]. A(%d,%d) - B(%d,%d)\n ",
+					aSquare->A->x,aSquare->A->y,
+					aSquare->B->x, aSquare->B->y);
+		printf ("         C(%d,%d) - D(%d,%d)\n ",
+					aSquare->C->x,aSquare->C->y,
+					aSquare->D->x, aSquare->D->y);
 	}
 }
 
@@ -67,6 +72,6 @@ Point *copyPointWithPoint(Point *aPoint)
 		theResult->x = aPoint->x;
 		theResult->y = aPoint->y;
 	}
-
+	
 	return theResult;
 }

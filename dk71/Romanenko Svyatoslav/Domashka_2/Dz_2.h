@@ -1,10 +1,8 @@
 
-#ifndef Dz_2_H_INCLUDED
-#define Dz_2_H_INCLUDED
+#ifndef Dz_2_h
+#define Dz_2_h
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
 
 // Point description
 typedef struct tagPoint
@@ -13,20 +11,21 @@ typedef struct tagPoint
 	int y;
 }Point;
 
-// Kvadrat description
-typedef struct tagLine
+// Square description
+typedef struct tagSquare
 {
 	Point *A;
 	Point *B;
 	Point *C;
 	Point *D;
-}Kvadrat;
+}Square;
 
 // Init interface
-Kvadrat *createKvadrat(Point *A, Point *B, Point *C, Point *D);
-void destroyKvadrat(Kvadrat *aKvadrat);
 
-float ploschaKvadrat(Kvadrat *aKvadrat);
-void printKvadrat(Kvadrat *aKvadrat);
+Square *createSquare(Point *A, Point *B, Point *C, Point *D;);
+void destroySquare(Square *aSquare);
 
-#endif // Dz_2_H_INCLUDED
+float areaSquare(Square *aSquare);
+void printSquare(Square *aSquare);
+
+#endif
