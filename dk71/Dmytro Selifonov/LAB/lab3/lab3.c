@@ -24,6 +24,7 @@ void scanFile(FILE *input)
     }
     fclose(input);
     FILE *output;
+    printf("zchit - ok\n");
     shellSort(words,size,output);
 }
 
@@ -72,5 +73,34 @@ void shellSort(char strings[][32] ,int size, FILE *output )
         }
 	}else { printf("ERROR");}
              
-    fclose(output);  
+    fclose(output);
+    printf("sort - ok\n");
+    char find[] = "shaft"; 
+	search(strings,size,find);  
+}
+
+int search(char strings[][32],int size,char find[])
+{
+	int first = 0,
+		last = size - 1,
+		middle = (first + last)/2;
+	if(strings == NULL || size == 0 || find == NULL)return 0;
+	while(first < last)
+	{
+		printf("1\n");
+		if(strcmp(strings[middle],find) == 0)
+		{
+			printf("index = %d\n",middle);
+			return 1;
+		}
+		if(strcmp(strings[middle],find) > 0)
+		{
+			first = middle + 1;
+		}else{
+			last = middle;
+		}
+		middle = (first + last)/2;
+	}
+	return 0;	
+		
 }
