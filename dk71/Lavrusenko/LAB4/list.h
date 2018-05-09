@@ -25,6 +25,6 @@ Item_List *SLAddNode(ListOptions *aList, Item_List *aNewNode);
 int SLCountList(const ListOptions *aList);
 Item_List *SLNodeAtIndex(const ListOptions *aList, int aIndex);
 
-
-
+void doPrintSLList(const ListOptions *aList);
+void twiceNode(ListOptions *aList );
 #endif 
