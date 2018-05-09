@@ -14,7 +14,7 @@ void Start_of_work(CharList *Before_Range, CharList *IN_Range, CharList *After_R
 
     loadFile ("lab_4.txt", Before_Range, IN_Range, After_Range, minimum, maximum);
 
-    printf("\nInformation from the files has been saved in the lists!\n");
+    printf("\nInformation from the files was saved in the lists!\n");
 
     printf("\nList with symbols before range:\n");
     doPrintSLList(Before_Range);
