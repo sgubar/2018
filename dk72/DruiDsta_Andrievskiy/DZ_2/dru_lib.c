@@ -49,9 +49,9 @@ Param *enterParam(Fig *aFig)
 		temp_b=sqrt(temp_bX*temp_bX+temp_bY*temp_bY), 
 		temp_c=sqrt(temp_cX*temp_cX+temp_cY*temp_cY);
 		
-		if(temp_a>0) temp_a*=-1;
-		if(temp_b>0) temp_b*=-1;
-		if(temp_c>0) temp_c*=-1;
+		if(temp_a<0) temp_a*=-1;
+		if(temp_b<0) temp_b*=-1;
+		if(temp_c<0) temp_c*=-1;
 		
 		if(temp_a==0 || temp_b==0 || temp_c==0) 
 		{
@@ -60,21 +60,21 @@ Param *enterParam(Fig *aFig)
 		}
 		else
 		{
-			float P=temp_a+temp_b+temp_c;
-			
-			if(P/3>temp_a && P/3>temp_b && P/3>temp_c)
+			if(temp_b+temp_c<=temp_a || temp_a+temp_c<=temp_b || temp_b+temp_a<=temp_c)
 			{
+				printf("Error. All points lie on one straight line\n");
+				result=NULL;
+			}
+			else 
+			{
+				float P=temp_a+temp_b+temp_c;
 				float p=P/2;
 				result->S=sqrt(p*(p-temp_a)*(p-temp_b)*(p-temp_c));
 				
 				result->a=temp_a;
 				result->b=temp_b;
 				result->c=temp_c;
-			}
-			else 
-			{
-				printf("Error. All points lie on one straight line\n");
-				result=NULL;
+				
 			}
 		}
 		
