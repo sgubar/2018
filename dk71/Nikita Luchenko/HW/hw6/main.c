@@ -25,53 +25,54 @@ int main()
     	
 	    scanf("%d", &check);
 	    
-	     if(check == 1)
+	     switch(check)
 		{
+		 case 1:
 			size_list(thelist);
-		}
+			     break;
 	    
-		 if(check == 2)
-		{
-			 print_list(thelist);
-		}
+		 case 2:
 		
-		 if(check == 3)
-		{
+			 print_list(thelist);
+			     break;
+		
+		 case 3: 
+		
 			delete_list(thelist);
 			printf("\n List was deleted");
-		}
+			     break;
 		
-		 if(check == 4)
-		{
+		 case 4:
+		
 			printf("\n Enter the letter:");
 			scanf("%c", &letter);
-            add_element(thelist, letter); 
-		}
+            add_element(thelist, letter);
+			     break;
 		
-	  	 if(check == 5)
-		{
+	  	 case 5:
+		
 			printf("\n Enter the letter :");
 			scanf("%d", &index);
-            delete_element(thelist, index); 
-			
-		}
+            delete_element(thelist, index);
+			     break;
 		
-		 if(check == 6)
-		{
+		
+		 case 6:
+		
 			printf("\n Enter the letter :");
 			scanf("%c", &letter);
 			printf("\n Enter the index :");
 			scanf("%d", &index);			
-            insert_element(thelist, index, letter);	
-		}
+            insert_element(thelist, index, letter);
+			     break;
 		
-		 if(check == 7)
-		{
+		 case 7:
+		
 			qsort_list(thelist, 0, thelist->size - 1);
-		}
+			     break;
 		
-		 if(check == 8)
-		{
+		 case 8:
+		
 			return 0;
 		}
 		
