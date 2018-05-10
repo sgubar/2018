@@ -1,0 +1,25 @@
+{
+	"number of Circles" : 3,
+	"count of Circles" : 3,
+	"Circles" : 
+[
+	{
+			"Center of Circle" : {"X" : 1, "Y" : 2}, 
+			"Point on Circle" : {"X" : 1, "Y" : 2}, 
+			"Length of Radius" : 0.000000, 
+			"Area of Circle" : 0.000000
+	},
+	{
+			"Center of Circle" : {"X" : 1, "Y" : 2}, 
+			"Point on Circle" : {"X" : 1, "Y" : 2}, 
+			"Length of Radius" : 0.000000, 
+			"Area of Circle" : 0.000000
+	},
+	{
+			"Center of Circle" : {"X" : 1, "Y" : 2}, 
+			"Point on Circle" : {"X" : 1, "Y" : 2}, 
+			"Length of Radius" : 0.000000, 
+			"Area of Circle" : 0.000000
+	}
+]
+}
