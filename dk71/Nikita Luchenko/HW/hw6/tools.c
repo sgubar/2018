@@ -69,7 +69,8 @@ void delete_element(List *thelist, int index)
 	else
 	{
    	 for (i ; i < index-1; ++i)
-		{
+                {
+		   if(theNode != NULL)
 			theNode = theNode->next;
 		}
     	 temp = theNode->next;
