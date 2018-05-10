@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 			addElement(theArray, &ABC, squareTriangle(&ABC));
 		}
 	
-	FILE *theFile = fopen("roflanPominki.json", "a+");
+	FILE *theFile = fopen("haha.json", "a+");
 	
 	writeArrayToJSON(theFile, theArray);
 	
