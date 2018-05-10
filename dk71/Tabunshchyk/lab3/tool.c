@@ -53,11 +53,11 @@ int quick()
 void search(int *array_of_numbers_main)
 {
 	int low, high, current, key;
-	
+	char key_char;
 	printf("\n\n\n\nWrite what are u searching: ");
-	scanf("%d ", &key);
+	scanf("%c ", &key_char);
 				
-				
+	key = key_char;			
 			
 				
 	low = 0;
@@ -69,7 +69,8 @@ void search(int *array_of_numbers_main)
 					current = (high + low) / 2;
 					if(key == array_of_numbers_main[current])
 					{
-						printf("\n\n\n\n%d found at location %d\nThis is done for %d\n", key, current+1);
+						key_char = key;
+						printf("\n\n\n\n%d found at location %c\n", key_char, current+1);
 						break; 
 					}
 					else 
@@ -86,7 +87,7 @@ void search(int *array_of_numbers_main)
 				}
 	
 	if (low > high)
-  	printf("\n\n\nNot found! %d isn't present in the list\nThis is done for %d\n", key);		
+  	printf("\n\n\nNot found! %c isn't present in the list\n", key_char);		
 	
 	
 	
