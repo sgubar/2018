@@ -1,0 +1,31 @@
+{
+	"number of Circles" : 4,
+	"count of Circles" : 4,
+	"Circles" : 
+[
+	{
+			"Center of Circle" : {"X" : 2, "Y" : 3}, 
+			"Point on Circle" : {"X" : 4, "Y" : 5}, 
+			"Length of Radius" : 8.000000, 
+			"Area of Circle" : 25.120001
+	},
+	{
+			"Center of Circle" : {"X" : 65, "Y" : 4}, 
+			"Point on Circle" : {"X" : 32, "Y" : 3}, 
+			"Length of Radius" : 1090.000000, 
+			"Area of Circle" : 3422.600098
+	},
+	{
+			"Center of Circle" : {"X" : 45, "Y" : 2}, 
+			"Point on Circle" : {"X" : 3, "Y" : 5}, 
+			"Length of Radius" : 1773.000000, 
+			"Area of Circle" : 5567.220215
+	},
+	{
+			"Center of Circle" : {"X" : 6, "Y" : 7}, 
+			"Point on Circle" : {"X" : 8, "Y" : 76}, 
+			"Length of Radius" : 4764.000000, 
+			"Area of Circle" : 14958.960938
+	}
+]
+}
