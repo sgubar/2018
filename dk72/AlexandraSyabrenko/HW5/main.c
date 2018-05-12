@@ -1,11 +1,3 @@
-//
-//  main.c
-//  HW5
-//
-//  Created by Alexandra Syabrenko on 12.05.18.
-//  Copyright © 2018 Alexandra Syabrenko. All rights reserved.
-//
-
 #include <stdio.h>
 #include "quickSort.h"
 #include "functions2.h"
