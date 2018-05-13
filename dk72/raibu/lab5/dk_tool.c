@@ -89,9 +89,9 @@ pbt_node pop_node(bintree* bt, char d){
 
 void node_print(pbt_node in){
 	if(in == NULL)return;
-    printf("%d\n", in->a);
+    printf("%u\n", in->a);
 	node_print(in->ch[0]);
-	node_print(in->ch[1]);
+    node_print(in->ch[1]);
 }
 
 void bt_print(bintree* in){

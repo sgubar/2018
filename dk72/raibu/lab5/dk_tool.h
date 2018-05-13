@@ -7,7 +7,7 @@
 #define CHNULL(x) if(x==NULL){printf("INVALID MALLOC\n");return NULL;}
 
 typedef struct __bt_node{
-	char a;
+	unsigned char a;
 	struct __bt_node* ch[2];
 }bt_node, *pbt_node;
 

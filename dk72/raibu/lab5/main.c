@@ -1,18 +1,21 @@
 #include "dk_tool.h" 
+#include <time.h>
 
 int main(int argc, char const *argv[])
 {
-
+	srand(time(NULL));
 	int cnt = atoi(argv[1]);
 	bintree* bt = new_bintree();
+	unsigned char c;
 	for (int i = 0; i < cnt; ++i)
 	{	
-		add_node(bt, (double)i);
-		printf("added node %d\n", (char)i);
+		c = rand()%100;
+		add_node(bt, c);
+		printf("added node %u\n", c);
 		if(i%3==0){
-			pbt_node c = pop_node(bt, (char)i);
-			printf("deleted %d\n", c->a);
-			free(c);
+			pbt_node s = pop_node(bt, c);
+			printf("deleted %u\n", s->a);
+			free(s);
 		}
 	}
 
