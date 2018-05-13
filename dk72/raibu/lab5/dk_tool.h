@@ -1,0 +1,47 @@
+#ifndef __SLL_RABU
+#define __SLL_RABU
+#include <stdlib.h>
+#include <stdio.h>
+#include <regex.h>
+
+#define CHNULL(x) if(x==NULL){printf("INVALID MALLOC\n");return NULL;}
+
+typedef struct __bt_node{
+	char a;
+	struct __bt_node* ch[2];
+}bt_node, *pbt_node;
+
+typedef struct __bt{
+	pbt_node head;
+	unsigned int len;
+}bintree;
+
+pbt_node new_bt_node(char x);
+bintree* new_bintree();
+pbt_node bin_search(bintree* bt, char d);
+void add_node(bintree* bt, char d);
+void bt_print(bintree* in);
+char get_double(void);
+pbt_node pop_node(bintree* bt, char d);
+void bt_free(bintree* in);
+
+
+#endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
