@@ -154,8 +154,6 @@ void lineSeach (ElipsArray *anArray, float WhatFind)
         {
             printf("Elips with that arrea had number %d",i);
         }
-         else
-            printf("No element with this count");
-    }
+    }   
   }
 }
