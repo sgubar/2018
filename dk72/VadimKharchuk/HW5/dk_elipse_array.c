@@ -147,6 +147,7 @@ void lineSeach (ElipsArray *anArray, float WhatFind)
     {
         return ;
     }
+    else {
     for (int i = 0; i < anArray -> count; i++)
     {
         if(WhatFind == anArray ->Elipses[i] -> Arrea)
@@ -156,4 +157,5 @@ void lineSeach (ElipsArray *anArray, float WhatFind)
          else
             printf("No element with this count");
     }
+  }
 }
