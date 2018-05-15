@@ -2,8 +2,8 @@
 #include "check.h"
 #include <stdlib.h>
 int main() {
-    IntList *firstList = CreateIntList();
-    IntList *secondList = CreateIntList();
+    CharList *firstList = CreateCharList();
+    CharList *secondList = CreateCharList();
     FILE *theFile = fopen("test.txt", "r");
     check (firstList,secondList,theFile);
 
