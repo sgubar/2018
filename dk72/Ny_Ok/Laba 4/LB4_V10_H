@@ -1,0 +1,23 @@
+ifndef LB4_V10_H_INCLUDED
+#define LB4_V10_H_INCLUDED
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <windows.h>
+
+struct List
+{
+int x;
+struct List * Next;
+};
+
+struct List * CreateList(void);
+void DisplayList( struct List* );
+void RemoveSet_Value( struct List* );
+void AddElementBegin( struct List** );
+void AddElementEnd(struct List* );
+void AddElementSign(struct List* );
+void FreeList(struct List** );
+
+#endif // LB4_V10_H_INCLUDED
