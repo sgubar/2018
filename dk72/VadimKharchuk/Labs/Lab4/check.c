@@ -5,9 +5,9 @@
 #include "check.h"
 #include <stdlib.h>
 #include <stdio.h>
-IntList *CreateIntList()
+CharList *CreateCharList()
 {
-    IntList *theList = (IntList *)malloc(sizeof(IntList));
+    CharList *theList = (CharList *)malloc(sizeof(CharList));
 
     if(theList != NULL)
     {
@@ -19,25 +19,25 @@ IntList *CreateIntList()
 }
 
 
-IntNode *createIntNodeWithValue (int anIntValue)
+CharNode *createCharNodeWithValue (int anCharValue)
 {
-    IntNode *theNode = (IntNode *)malloc(sizeof(IntNode));
+    CharNode *theNode = (CharNode *)malloc(sizeof(CharNode));
     if (NULL != theNode)
     {
         theNode -> next = NULL;
-        theNode -> value = anIntValue;
+        theNode -> value = anCharValue;
     }
     return theNode;
 }
-void addValueToList(IntList *aList,char symbol)
+void addValueToList(CharList *aList,char symbol)
 {
     if (aList != NULL) {
-        IntNode *theNode = createIntNodeWithValue(symbol);
+        CharNode *theNode = createCharNodeWithValue(symbol);
         if (theNode != NULL) {
             if (aList->head == NULL && aList->head == aList->tail) {
                 aList->head = aList->tail = theNode;
             } else {
-                IntNode *theTail = aList->tail;
+                CharNode *theTail = aList->tail;
                 aList->tail = theNode;
                 theTail->next = theNode;
             }
@@ -47,7 +47,7 @@ void addValueToList(IntList *aList,char symbol)
     }
 }
 
-void check(IntList *aList, IntList *bList,FILE *aFile)
+void check(CharList *aList, CharList *bList,FILE *aFile)
 {
     int i = 0;
     if (NULL == aList || NULL == aFile)
