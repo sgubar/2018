@@ -86,8 +86,12 @@ void check(CharList *aList, CharList *bList,FILE *aFile)
         };
     } while (i != EOF); // пока не конец файла
     fclose (aFile);
-    if(aList -> count == bList ->count)
-        printf("allFine");
-    else
+    if(aList -> count == bList ->count) {
+        printf("allFine\n");
+        printf("Count of '{' == '}'");
+    }
+    else {
         printf("You had mistake");
+        printf("Count of '{' =  %d  Count of '}' = %d",aList ->count, bList->count);
+    }
 }
