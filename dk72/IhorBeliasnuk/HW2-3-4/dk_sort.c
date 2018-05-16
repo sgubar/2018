@@ -25,3 +25,52 @@ void swap (Rectangle *element1Ptr, Rectangle *element2Ptr)
     *element1Ptr = *element2Ptr;
     *element2Ptr = temp;
 }
+
+void shellSort(RectangleArray *anArray, int aCount)
+{
+    int i,j,k;
+    Rectangle *t;
+    for(k = aCount/2; k > 0; k /= 2)
+        for(i = k; i < aCount; i++)
+            {
+                t = anArray->rectangles[i];
+                for(j = i; j>=k; j-=k)
+                {
+                    if(rectangleArea(t) < rectangleArea(anArray->rectangles[j-k]))
+                    {
+                        anArray->rectangles[j] = anArray->rectangles[j - k];
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                anArray->rectangles[j] = t;
+            }
+
+}
+
+int binarySearch(int soughtValue, RectangleArray *anArray, int size)
+{
+    int leftIndex = 0;
+    int rightIndex = size-1;
+
+    while (leftIndex <= rightIndex) {
+        int middleIndex = ((leftIndex + rightIndex) / 2);
+
+        if (soughtValue == rectangleArea(anArray->rectangles[middleIndex]))
+        {
+            return 0;
+        }
+        else if (soughtValue < rectangleArea(anArray->rectangles[middleIndex]))
+        {
+            rightIndex = middleIndex - 1;
+        }
+        else
+        {
+            leftIndex = middleIndex + 1;
+        }
+    }
+
+    return 1;
+}
