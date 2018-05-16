@@ -17,6 +17,24 @@ CharList *CreateCharList()
     }
     return theList;
 }
+void DestroyCharList(CharList *aList)
+{
+    if(aList == NULL)
+    {
+        return ;
+    }
+    if (NULL != aList -> tail && NULL != aList -> head)
+    {
+        CharNode *theNode = aList -> head;
+        do {
+            CharNode *theNodeWhatDelete = theNode;
+            theNode = theNode -> next;
+            free(theNodeWhatDelete);
+        }
+        while (theNode != NULL);
+        free(aList);
+    }
+}
 
 
 CharNode *createCharNodeWithValue (int anCharValue)
