@@ -11,7 +11,6 @@ typedef struct __tagCharNode CharNode;
 struct __tagCharNode
 {
     int value;
-    CharNode *prev;
     CharNode *next;
 };
 
