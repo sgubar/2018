@@ -25,6 +25,7 @@ typedef struct __tagCharList
 }CharList;
 
 CharList *CreateCharList();
+void DestroyCharList(CharList *aList);
 void check(CharList *aList,CharList *bList, FILE *aFile);
 void addValueToList(CharList *aList,char counter);
 CharNode *createCharNodeWithValue (int anCharValue);
