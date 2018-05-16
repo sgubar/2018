@@ -7,6 +7,8 @@ int main() {
     FILE *theFile = fopen("test.txt", "r");
     check (firstList,secondList,theFile);
 
+    DestroyCharList(firstList);
+    DestroyCharList(secondList);
 
     fflush(theFile);
     fclose(theFile);
