@@ -96,7 +96,7 @@ CharNode *SLAddNode(CharList *aList, CharNode *aNewNode)
 
 int SLCountList(const CharList *aList)
 {
-    char theResult = kSLListError;
+    int theResult = kSLListError;
 
     if (NULL != aList)
     {
