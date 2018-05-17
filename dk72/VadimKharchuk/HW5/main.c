@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "dk_elips.h"
 #include "dk_elipse_array.h"
-
+#include "sort.h"
 int main()
 {
     float WhatFind = 37.680000;
