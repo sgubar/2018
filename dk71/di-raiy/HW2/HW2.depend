@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1526550280 source:c:\users\di_ray\desktop\hw2\main.c
+	<stdio.h>
+	"dk_triangle.h"
+
+1526551227 c:\users\di_ray\desktop\hw2\dk_triangle.h
+	<stdio.h>
+
+1526550242 source:c:\users\di_ray\desktop\hw2\dk_triangle.c
+	"dk_triangle.h"
+	<stdlib.h>
+
