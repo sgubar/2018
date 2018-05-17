@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1526544779 source:c:\users\ярослав\desktop\vlab3\dk_sort.c
+	"dk_sort.h"
+
+1526544779 c:\users\ярослав\desktop\vlab3\dk_sort.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+
+1526543279 source:c:\users\ярослав\desktop\vlab3\main.c
+	"dk_sort.h"
+
