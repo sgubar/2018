@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1526391526 source:c:\users\ярослав\desktop\sdz3\dz2.c
+	"dz2.h"
+	<stdlib.h>
+	<math.h>
+
+1526391363 c:\users\ярослав\desktop\sdz3\dz2.h
+	<stdio.h>
+
+1526332382 source:c:\users\ярослав\desktop\sdz3\dz3.c
+	"dz3.h"
+	<stdlib.h>
+
+1525946623 c:\users\ярослав\desktop\sdz3\dz3.h
+	<stdio.h>
+	"dz2.h"
+
+1526330108 source:c:\users\ярослав\desktop\sdz3\main.c
+	<stdio.h>
+	"dz3.h"
+
