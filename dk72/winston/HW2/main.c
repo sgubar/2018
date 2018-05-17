@@ -15,7 +15,7 @@ int main()
 	printf("Enter the coordinates of point C:\n");
 	Enter_Coordinate_Point_C (&C_x,&C_y, A_x, A_y, B_x, B_y);
 
-	D_x=(A_x+C_x)-B_x;
+    D_x=(A_x+C_x)-B_x;
     D_y=(A_y+C_y)-B_y;
 
     Point A = {A_x,A_y};
