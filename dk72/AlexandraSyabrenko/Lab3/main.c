@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include "shellSort.h"
 #include <time.h>
+#include "shellSort.h"
 
 int main() {
     FILE *file = fopen("/Users/alexandrasyabrenko/Documents/Programming/Lab3/Lab3/test.txt", "r");
@@ -18,7 +18,12 @@ int main() {
     
     printArrayToFile(array, arrayLength);
     
+    unsigned int start_time = (unsigned int) clock();
     linearSearch(array, 'd', arrayLength);
+    unsigned int end_time = (unsigned int) clock();
+    unsigned int sort_time = end_time - start_time;
+    
+    printf("Sorting time: %d ms\n", sort_time);
     
     fclose(file);
     free(array);
