@@ -11,7 +11,7 @@ void buble_sort(char *aray, int size)
         {
           int temp = aray[i+1];
           aray[i+1] = aray[i];
-          aray[i] = temp;
+          aray[i] = swaps;
           swaps++;
         }
       }
