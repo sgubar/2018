@@ -85,7 +85,7 @@ void delete_element(List *alist, int index)
 
 void insert_element(List *alist, int index, char letter) 	
 {
-    int theResult = -1;
+    int theResult;
 	if (NULL == alist || index >= alist->size || index < 0)
 	{
 		return theResult;
