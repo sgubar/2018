@@ -48,3 +48,32 @@
 	<stdio.h>
 	"dz3.h"
 
+1526639542 source:c:\users\ярослав\desktop\dz4\dz2.c
+	"dz2.h"
+	<stdlib.h>
+	<math.h>
+
+1526639542 c:\users\ярослав\desktop\dz4\dz2.h
+	<stdio.h>
+
+1526638867 source:c:\users\ярослав\desktop\dz4\dz3.c
+	"dz3.h"
+	<stdlib.h>
+
+1526638913 c:\users\ярослав\desktop\dz4\dz3.h
+	<stdio.h>
+	"dz2.h"
+
+1526547017 source:c:\users\ярослав\desktop\dz4\main.c
+	<stdio.h>
+	"dz3.h"
+
+1526547382 source:c:\users\ярослав\desktop\dz4\dz4.c
+	"dz4.h"
+	"dz3.h"
+
+1526638975 c:\users\ярослав\desktop\dz4\dz4.h
+	<stdlib.h>
+	<stdio.h>
+	"dz3.h"
+

@@ -15,20 +15,20 @@ typedef struct tagLine
 	Point *B;
 }Line;
 
-typedef struct tagTrapeze
+typedef struct tagTriangle
 {
 	Point *A;
 	Point *B;
 	Point *C;
-}Trapeze;
+}Triangle;
 
 Line *createLine(Point *A, Point *B);
 void destroyLine(Line *aLine);
-float areaTrapeze(Trapeze *aTrapeze);
+float areaTriangle(Triangle *aTriangle);
 float lenghLine(Line *aLine);
 void printLine(Line *aLine);
-void printTrapeze(Trapeze *aTrapeze);
-void destroyTrapeze(Trapeze *aTrapeze);
-Trapeze *createTrapeze(Point *A, Point *B, Point *C);
+
+void destroyTriangle(Triangle *aTriangle);
+Triangle *createTriangle(Point *A, Point *B, Point *C);
 
 #endif /* dz2_h */

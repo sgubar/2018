@@ -71,7 +71,7 @@ void writeArrayToJSON(FILE *aFile, TriangleArray *anArray)
 
 	fprintf(aFile, "{\n\"number\" : %d,\n\"count\" : %d,\n",
 			anArray->number, anArray->count);
-	fprintf(aFile, "\"Triangles\" : \n[\n");
+	fprintf(aFile, "\"triangles\" : \n[\n");
 
 	int i;
 	for ( i = 0; i < anArray->count; i ++)

@@ -104,16 +104,7 @@ void printLine(Line *aLine)
 	}
 }
 
-void printTriangle(Triangle *aTriangle)
-{
-	if (NULL != aTriangle)
-	{
-		printf ("[Triangle]. A(%d,%d) - B(%d,%d) - C(%d,%d)\n",
-					aTriangle->A->x, aTriangle->A->y,
-					aTriangle->B->x, aTriangle->B->y,
-					aTriangle->C->x, aTriangle->C->y);
-	}
-}
+
 
 Point *copyPointWithPoint(Point *aPoint)
 {

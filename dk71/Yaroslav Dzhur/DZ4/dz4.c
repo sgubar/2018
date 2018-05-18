@@ -2,6 +2,7 @@
 #include "dz3.h"
 
 void insertion_sort(TriangleArray *theArray, FILE *file){
+
 	int i;
 	for ( i = 1; i < theArray->count; i ++)
 	{

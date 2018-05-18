@@ -1,7 +1,7 @@
 {
 "number" : 4,
 "count" : 3,
-"trapezes" : 
+"triangles" : 
 [
 {
 "A" : {"x" : 2, "y" : 1}, 
