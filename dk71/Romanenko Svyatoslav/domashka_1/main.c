@@ -6,9 +6,9 @@ int main(int argc, char *argv[]){
  
  	int *matrix, *trans_matrix, hor, ver;
  	
-	printf("enter the length of the lines:");
+	printf("enter the length of the hor:");
 	scanf("%d",&hor);
-	printf("enter the length of the columns:");
+	printf("enter the length of the ver:");
 	scanf("%d",&ver);
 	
 	matrix = (int*)malloc((hor+ver)*sizeof(int));  
