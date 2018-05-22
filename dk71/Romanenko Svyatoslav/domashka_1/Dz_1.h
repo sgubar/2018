@@ -1,7 +1,9 @@
 #ifndef dz_1
 #define dz_1
 
-int ntr_vl_fnc(int strng, int clmn);
-void output_matrix(int matrix[], int strngs, int num_comp);
+#include <stdio.h>
 
+int input_matrix(int *matrix, int hor, int ver);
+int transponation(int *matrix, int *trans_matrix, int hor, int ver);
+int output_matrix(int *trans_matrix, int hor, int ver);
 #endif
