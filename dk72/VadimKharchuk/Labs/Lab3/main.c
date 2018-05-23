@@ -23,10 +23,10 @@ int main() {
     printf("Write what number need a find");
     WhatFind = ValueCheck();
     
-    unsigned int start_time =  clock();
+    start_time =  clock();
     Seach(a,WhatFind,SIZE);
-    unsigned int end_time = clock();
-    unsigned int sort_time = end_time - start_time;
+    end_time = clock();
+    sort_time = end_time - start_time;
     printf("Sorting time : %d ms\n", sort_time);
 
 
