@@ -63,7 +63,6 @@ void printArrToFile(int array[], long size, char* name) {
 
 void Seach(int array[], int WhatFind, long SIZE)
 {
-    unsigned int start_time =  clock();
     FILE *file = fopen("Finded.txt", "a+");
     fprintf(file, "You Seach %d, This number had address:\n ",WhatFind);
     for(int i = 0; i < SIZE; i++)
@@ -74,8 +73,5 @@ void Seach(int array[], int WhatFind, long SIZE)
         }
 
     }
-    unsigned int end_time = clock();
-    unsigned int sort_time = end_time - start_time;
-    printf("Sorting time : %d ms\n", sort_time);
     fclose(file);
 }
