@@ -1,1 +1,1 @@
-The plased Binare Tree with PreOrder
+There plased Binare Tree with PreOrder
