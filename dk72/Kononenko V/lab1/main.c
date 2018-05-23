@@ -21,7 +21,7 @@ int main (int argc, char *argv[])
 	printf("\nC = ");
 	scanf_s("%f", &C);
 	int i=0;
-	for(;i<B;i++){
+	for(;i<B+1;i++){
 		D=factorial(i)+D;	
 		
 	}
