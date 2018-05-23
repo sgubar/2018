@@ -92,3 +92,18 @@ void writeArrayToJSON(FILE *aFile, TriangleArray *anArray)
 
     fprintf(aFile, "],\n}");
 }
+
+void insertion_sort(TriangleArray *anArray) {
+    Triangle *newElement = NULL;
+    int location;
+    for (int i = 1; i < anArray->count; i++) {
+        newElement = anArray->triangles[i];
+        location = i - 1;
+        while (location >= 0 && flatTriangle(anArray->triangles[location]) < flatTriangle(anArray->triangles[i])) {
+            anArray->triangles[location + 1] = anArray->triangles[location];
+            location = location - 1;
+
+
+        }
+    }
+}
