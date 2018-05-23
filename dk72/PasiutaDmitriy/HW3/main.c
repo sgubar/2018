@@ -1,44 +1,54 @@
 #include <stdio.h>
-
-#include <stdio.h>
 #include "dk_triangle.h"
 #include "dk_triangle_array.h"
 #define R 2.5
+
 int main(int argc, const char * argv[])
 {
-    int k;
-    int i;
-    int A_x, A_y, B_x, B_y, C_x, C_y;
-    TriangleArray *theArray = createArray(5);
-    printf("Enter k = ");
-    scanf("%d", &k);
-    for(i=1; i<=k; i++)
-    {
-        printf("\n\tEnter %d triangle\n", i);
+    TriangleArray *theArray = createArray(4);
 
-        enter(&A_x,&A_y);
-        enter(&B_x,&B_y);
-        enter(&C_x,&C_y);
+    Point A = {4, 0};
+    Point B = {0, 0};
+    Point C = {0, 4};
 
-        Point A = {A_x,A_y};
-        Point B = {B_x,B_y};
-        Point C = {C_x,C_y};
+    Point D = {5, 0};
+    Point E = {0, 0};
+    Point G = {0, 5};
 
-        Triangle ABC = {&A, &B, &C};
+    Point K = {6, 0};
+    Point X = {0, 0};
+    Point Y = {0, 6};
 
-        addElement(theArray, &ABC);
-    }
-    FILE *theFile = fopen("//home/dima/labs/2_semestr/labs-on-C/Hw3/test.json", "a+");
-    // printTriangle(ABC);
+    Point Q = {10, 0};
+    Point W = {0, 0};
+    Point T = {0, 10};
+
+    Triangle ABC = {&A, &B, &C};
+    Triangle DEG = {&D, &E, &G};
+    Triangle KXY = {&K, &X,&Y};
+    Triangle QWT = {&Q, &W,&T};
+
+    addElement(theArray, &KXY);
+    addElement(theArray, &ABC);
+    addElement(theArray, &DEG);
+    addElement(theArray, &QWT);
+
+
+
+    FILE *theFile = fopen("test_unsorted.json", "w");
     writeArrayToJSON(theFile, theArray);
-
     fflush(theFile);
     fclose(theFile);
 
+    insertion_sort(theArray);
+
+
+    FILE *theFile2 = fopen("test_sorted.json", "w");
+    writeArrayToJSON(theFile, theArray);
+    fflush(theFile2);
+    fclose(theFile2);
+
     freeArray(theArray);
 
-
     return 0;
-
-
 }
