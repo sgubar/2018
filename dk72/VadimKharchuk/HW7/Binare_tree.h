@@ -33,6 +33,6 @@ void printTree(IntTree *aTree);
 void printTree(IntTree *aTree);
 
 IntNode* FindMin(IntNode* aNode);
-IntNode* deleteNodeWithElement(IntTree *aDrevo,IntNode* aNode, int aElement);
+IntNode* deleteNodeWithElement(IntTree *aTree,IntNode* aNode, int aElement);
 
 #endif //HW7_BINARE_TREE_H
