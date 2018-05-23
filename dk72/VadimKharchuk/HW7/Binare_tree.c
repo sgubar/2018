@@ -151,43 +151,43 @@ IntNode* FindMin(IntNode* aNode)
     return aNode;
 }
 
-IntNode* deleteNodeWithElement(IntTree *aDrevo,IntNode* aNode, int aElement)
+IntNode* deleteNodeWithElement(IntTree *aTree,IntNode* aNode, int aElement)
 {
     if (aNode == NULL) {
         return NULL;
     }
     else if (aElement < aNode->value)
-        aNode->leftChild = deleteNodeWithElement(aDrevo,aNode->leftChild, aElement);
+        aNode->leftChild = deleteNodeWithElement(aTree,aNode->leftChild, aElement);
     else if (aElement > aNode->value)
-        aNode->rightChild = deleteNodeWithElement(aDrevo , aNode->rightChild, aElement);
+        aNode->rightChild = deleteNodeWithElement(aTree , aNode->rightChild, aElement);
     else
     {
         if (aNode->leftChild == NULL && aNode->rightChild == NULL)
         {
             free(aNode);
             aNode = NULL;
-            aDrevo->count--;
+            aTree->count--;
         }
         else if (aNode->leftChild == NULL)
         {
             IntNode *theTmp = aNode;
             aNode = aNode->rightChild;
             free(theTmp);
-            aDrevo->count--;
+            aTree->count--;
         }
         else if (aNode->rightChild == NULL)
         {
             IntNode *theTmp = aNode;
             aNode = aNode->leftChild;
             free(theTmp);
-            aDrevo->count--;
+            aTree->count--;
         }
         else
         {
             IntNode *theTmp = FindMin(aNode->rightChild);
             aNode->value = theTmp->value;
-            aNode->rightChild = deleteNodeWithElement(aDrevo, aNode->rightChild,theTmp->value);
-            aDrevo->count--;
+            aNode->rightChild = deleteNodeWithElement(aTree, aNode->rightChild,theTmp->value);
+            aTree->count--;
         }
     }
     return aNode;
