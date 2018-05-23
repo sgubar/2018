@@ -8,6 +8,7 @@
 // Created by dima on 17.04.18.
 //
 
+
 #ifndef HW2_DK_TRIANGLE_H
 #define HW2_DK_TRIANGLE_H
 #include <stdio.h>
@@ -31,8 +32,8 @@ Triangle *createTriangle(Point *A, Point *B , Point *C);
 void destroyTriangle(Triangle *aTriangle);
 
 float flatTriangle(Triangle *aTriangle);
-void printTriangle(Triangle *aTriangle);
 void writeTriangleToJSON(FILE *aFile, Triangle *atriangle);
-void enter(int *X, int *Y);
 
-#endif //HW2_DK_TRIANGLE_H
+
+
+#endif //DMITRY_DK_TRIANGLE_H
