@@ -2,13 +2,13 @@
 
 Point *copyPointWithPoint(Point *aPoint);
 
-Square *createSquare(Point *A, Point *B, Point *C, Point *D)
+Kvadrat *createKvadrat(Point *A, Point *B, Point *C, Point *D)
 {
-    Square *theResult = NULL;
+    Kvadrat *theResult = NULL;
 
     if (NULL != A && NULL != B && NULL != C && NULL != D)
     {
-        theResult = (Square *)malloc(sizeof(Square));
+        theResult = (Kvadrat *)malloc(sizeof(Kvadrat));
 
         if (NULL != theResult)
         {
@@ -21,16 +21,16 @@ Square *createSquare(Point *A, Point *B, Point *C, Point *D)
     return theResult;
 }
 
-void destroySquare(Square *aSquare)
+void destroyKvadrat(Kvadrat *aKvadrat)
 {
-	if (NULL != aSquare)
+	if (NULL != aKvadrat)
 	{
-		free(aSquare->A);
-		free(aSquare->B);
-		free(aSquare->C);
-		free(aSquare->D);
+		free(aKvadrat->A);
+		free(aKvadrat->B);
+		free(aKvadrat->C);
+		free(aKvadrat->D);
 
-		free(aSquare);
+		free(aKvadrat);
 	}
 }
 
@@ -64,33 +64,33 @@ void writePointToJSON(FILE *aFile, Point *aPoint)
 	fprintf(aFile, "{\"x\" : %d, \"y\" : %d}", aPoint->x, aPoint->y);
 }
 
-void writeSquareToJSON(FILE *aFile, Square *aSquare)
+void writeSquareToJSON(FILE *aFile, Kvadrat *aKvadrat)
 {
-	if (NULL == aSquare || NULL == aFile)
+	if (NULL == aKvadrat || NULL == aFile)
 	{
 		return ;
 	}
 
 	fprintf(aFile, "{\n\"A\" : ");
-	writePointToJSON(aFile, aSquare->A);
+	writePointToJSON(aFile, aKvadrat->A);
 	fprintf(aFile, ",\n\"B\" : ");
-	writePointToJSON(aFile, aSquare->B);
+	writePointToJSON(aFile, aKvadrat->B);
 	fprintf(aFile, ",\n\"C\" : ");
-	writePointToJSON(aFile, aSquare->C);
+	writePointToJSON(aFile, aKvadrat->C);
 	fprintf(aFile, ",\n\"D\" : ");
-	writePointToJSON(aFile, aSquare->D);
-	fprintf(aFile, "\n Area : %f \n}",areaSquare(aSquare));
+	writePointToJSON(aFile, aKvadrat->D);
+	fprintf(aFile, "\n Area : %f \n}",IndKvadrat(aKvadrat));
 	
 }
 
-float areaSquare(Square *aSquare)
+float areaSquare(Kvadrat *aKvadrat)
 {
    float theResult = 0.0;
 
-	if (NULL != aSquare)
+	if (NULL != aKvadrat)
 	{
-		float dX = (aSquare->A->x - aSquare->B->x);
-		float dY = (aSquare->A->y - aSquare->B->y);
+		float dX = (aKvadrat->A->x - aKvadrat->B->x);
+		float dY = (aKvadrat->A->y - aKvadrat->B->y);
 		theResult = sqrt(dX*dX + dY*dY)*sqrt(dX*dX + dY*dY);
 	}
 	return theResult;

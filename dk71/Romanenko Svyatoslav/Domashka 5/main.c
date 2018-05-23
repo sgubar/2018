@@ -6,7 +6,7 @@
 int main(int argc, const char * argv[])
 {
 
-    SquareArray *theArray = createArray(5);
+    KvadratArray *theArray = createArray(5);
 
  int A_x, A_y, B_x, B_y, C_x, C_y, D_x, D_y;
  int count=1, N=1;
@@ -30,11 +30,11 @@ do
 	Point C = {C_x,C_y};
 	Point D = {(A_x+C_x)-B_x,(A_y+C_y)-B_y};
 
-	Square ABCD={&A, &B, &C, &D};
+	Kvadrat ABCD={&A, &B, &C, &D};
 
-	printf("Area ABCD = %f\n\n", areaSquare(&ABCD));
+	printf("Area ABCD = %f\n\n", IndSquare(&ABCD));
 
-	addElement(theArray, &ABCD, areaSquare(&ABCD));
+	addElement(theArray, &ABCD, IndSquare(&ABCD));
 
 	printf("continue - 1; exit - 0 :\n");
 	scanf("%d",&count);

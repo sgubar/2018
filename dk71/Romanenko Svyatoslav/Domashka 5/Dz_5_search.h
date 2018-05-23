@@ -4,24 +4,24 @@
 #include <stdio.h>
 #include "Dz_5.h"
 
-typedef struct tagSquareArray
+typedef struct tagKvadratArray
 {
 	int number;
 	int count;
 
-	float *areaSquare;
+	float *IndKvadrat;
 
-	Square **Squares;
-}SquareArray;
+	Kvadrat **Kvadrats;
+}KvadratArray;
 
-SquareArray *createArray(int aNumber);
-void freeArray(SquareArray *anArray);
+KvadratArray *createArray(int aNumber);
+void freeArray(KvadratArray *anArray);
 
-int addElement(SquareArray *anArray, Square *aSquare, float area);
-void writeArrayToJSON(FILE *aFile, SquareArray *anArray);
+int addElement(KvadratArray *anArray, Kvadrat *aKvadrat, float Ind);
+void writeArrayToJSON(FILE *aFile, KvadratArray *anArray);
 
-void shellSort(SquareArray *anArray);
-int linear_search(SquareArray *anArray, float key);
-void printArray(SquareArray *anArray);
+void shellSort(KvadratArray *anArray);
+int linear_search(KvadratArray *anArray, float key);
+void printArray(KvadratArray *anArray);
 
 #endif
