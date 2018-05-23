@@ -9,7 +9,7 @@ typedef struct tagSquareArray
 	int number;
 	int count;
 
-	float *areaSquare;
+	float *IndSquare;
 
 	Square **Squares;
 }SquareArray;
@@ -17,7 +17,7 @@ typedef struct tagSquareArray
 SquareArray *createArray(int aNumber);
 void freeArray(SquareArray *anArray);
 
-int addElement(SquareArray *anArray, Square *aSquare, float area);
+int addElement(SquareArray *anArray, Square *aSquare, float Ind);
 void writeArrayToJSON(FILE *aFile, SquareArray *anArray);
 
 void sort_vybora(SquareArray *anArray);

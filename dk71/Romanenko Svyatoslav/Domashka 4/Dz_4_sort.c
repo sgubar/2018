@@ -12,7 +12,7 @@ SquareArray *createArray(int aNumber)
 		if (NULL != theResult)
 		{
 			theResult->Squares = (Square **)malloc(sizeof(Square *)*aNumber);
-			theResult->areaSquare = malloc(sizeof(float)*aNumber);
+			theResult->IndSquare = malloc(sizeof(float)*aNumber);
 
 			if (NULL != theResult->Squares)
 			{
@@ -45,7 +45,7 @@ void freeArray(SquareArray *anArray)
 	}
 }
 
-int addElement(SquareArray *anArray, Square *aSquare, float area)
+int addElement(SquareArray *anArray, Square *aSquare, float Ind)
 {
 	int theResult = -1;
 
@@ -54,7 +54,7 @@ int addElement(SquareArray *anArray, Square *aSquare, float area)
 	{
 		anArray->Squares[anArray->count] =
 					createSquare(aSquare->A, aSquare->B, aSquare->C,aSquare->D);
-		anArray->areaSquare[anArray->count] = area;
+		anArray->IndSquare[anArray->count] = Ind;
 
 		theResult = anArray->count;
 		anArray->count ++;
@@ -91,26 +91,26 @@ void writeArrayToJSON(FILE *aFile, SquareArray *anArray)
 void sort_vybora(SquareArray *anArray)
 {
     Square *temp=NULL;
-    int dopomigna,i,j;
-    float minArea;
+    int helper,i,j;
+    float minInd;
     for(i = 0; i < anArray->count; ++i)
     {
-        dopomigna = i;
+        helper = i;
         temp = anArray->Squares[i];
-        minArea = anArray->areaSquare[i];
+        minInd = anArray->IndSquare[i];
         for(j = i + 1; j < anArray->count; ++j)
         {
-            if (anArray->areaSquare[j] < minArea)
+            if (anArray->IndSquare[j] < minInd)
             {
-               dopomigna = j;
+               helper = j;
                temp = anArray->Squares[j];
-               minArea = anArray->areaSquare[j];
+               minInd = anArray->IndSquare[j];
             }
         }
-        anArray->Squares[dopomigna] = anArray->Squares[i];
-        anArray->areaSquare[dopomigna] = anArray->areaSquare[i];
+        anArray->Squares[helper] = anArray->Squares[i];
+        anArray->IndSquare[helper] = anArray->IndSquare[i];
         anArray->Squares[i] = temp;
-        anArray->areaSquare[i] = minArea;
+        anArray->IndSquare[i] = minInd;
     }
 }
 void printArray(SquareArray *anArray)
