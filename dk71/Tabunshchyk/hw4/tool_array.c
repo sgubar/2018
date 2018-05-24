@@ -94,8 +94,7 @@ void write_array_to_JSON(FILE *before, triangleArray *anArray)
 void insertion_sort(triangleArray *anArray)
 {
     triangle *key = NULL;
-    int i;
-	int j;
+    int i, j;
     for (j = 1; j < anArray->count; j++)
     {
         key = anArray->triangles[j];
