@@ -141,3 +141,22 @@ void writeArrayToJSON(FILE *aFile, CircleArray *InstantArray)
     }
     fprintf(aFile, "],\n}");
 }
+
+void insertion_sort(CircleArray *InstantArray)
+{
+    Circle *Tmp = NULL;
+    int In;
+	int Out;
+	
+    for (Out = 1; Out < InstantArray->count; Out++)
+    {
+        Tmp = InstantArray->Circles[Out];
+        In = Out - 1;
+        while(In >= 0 && InstantArray->Circles[In] > InstantArray->Circles[Out])
+        {
+            InstantArray->Circles[In+1] = InstantArray->Circles[In];
+            In = In - 1;
+        }
+        InstantArray->Circles[In+1] = Tmp;
+    }
+}

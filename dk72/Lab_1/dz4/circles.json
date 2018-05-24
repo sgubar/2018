@@ -1,0 +1,25 @@
+{
+"number" : 1,
+"count" : 1,
+"Circles" : 
+[
+{
+"Center " : {"x" : 2, "y" : 4}
+"Radius" : {"x" : 1, "y" : 3}
+"Square " : 6.280000
+],
+}{
+"number" : 2,
+"count" : 1,
+"Circles" : 
+[
+{
+"Center " : {"x" : 2, "y" : 4}
+"Radius" : {"x" : 1, "y" : 3}
+"Square " : 6.280000,
+{
+"Center " : {"x" : 44918800, "y" : 0}
+"Radius" : {"x" : 44892496, "y" : 0}
+"Square " : 2172567296.000000
+],
+}

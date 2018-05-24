@@ -141,3 +141,71 @@ void writeArrayToJSON(FILE *aFile, CircleArray *InstantArray)
     }
     fprintf(aFile, "],\n}");
 }
+
+void insertion_sort(CircleArray *InstantArray)
+{
+    Circle *Tmp = NULL;
+    int In;
+	int Out;
+	
+    for (Out = 1; Out < InstantArray->count; Out++)
+    {
+        Tmp = InstantArray->Circles[Out];
+        In = Out - 1;
+        while(In >= 0 && InstantArray->Circles[In] > InstantArray->Circles[Out])
+        {
+            InstantArray->Circles[In+1] = InstantArray->Circles[In];
+            In = In - 1;
+        }
+        InstantArray->Circles[In+1] = Tmp;
+    }
+}
+
+int line_search(CircleArray *InstantArray, float search)
+{
+	int i;
+	int pos;
+
+    for(i = 0; i < InstantArray->count; i++)
+    {
+        if (SquareCircle(InstantArray->Circles[i]) == search)
+        {
+			printf("\nIt's right,you find it.'\n");
+			pos=i;
+		
+		return pos+1;
+		}
+    }	
+    return pos+1;
+}
+
+void quick_sort(CircleArray *InstantArray, int first, int last)
+{
+	int left = first;
+ 	int right = last;
+
+	int mid = InstantArray->Circles[(left + right) / 2];
+
+  while (left <= right)
+  {
+    while (InstantArray->Circles[left] < mid) left++;
+    while (InstantArray->Circles[right] > mid) right--;
+
+    if (left <= right)
+	{
+        swap(&InstantArray->Circles[left], &InstantArray->Circles[right]);
+        left++;
+        right--;
+	}
+  }
+  
+  if (first < right) quick_sort(InstantArray, first, right);
+  if (left < last) quick_sort(InstantArray, left, last);
+}
+
+void swap (Circle *Ptr1, Circle *Ptr2)
+{
+    Circle temp = *Ptr1;
+    *Ptr1 = *Ptr2;
+    *Ptr2 = temp;
+}

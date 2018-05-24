@@ -50,8 +50,18 @@ ProductVersion=1.0.0.0
 AutoIncBuildNr=0
 SyncProduct=1
 
+[Unit5]
+FileName=cirlce.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
 [Unit1]
-FileName=circle.c
+FileName=main.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -82,16 +92,6 @@ BuildCmd=
 
 [Unit4]
 FileName=circle_array.h
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit5]
-FileName=main.c
 CompileCpp=0
 Folder=
 Compile=1

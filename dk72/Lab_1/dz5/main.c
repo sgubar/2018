@@ -8,7 +8,7 @@
 int main(void) 
 {
 	//UNSORTED ARRAY
-	CircleArray *InstantArray = CreateArray(3); //creating array of figures
+	CircleArray *InstantArray = CreateArray(2); //creating array of figures
     Point Center = {2,4};    // center of circle
 	Point Radius ={1,3};   // radius
     Circle created_Circle = {&Center, &Radius}; // creating circle
@@ -18,6 +18,14 @@ int main(void)
 	fflush(file);
     fclose(file); // closing file
     freeArray(InstantArray); // delete array 
+    
+	//LINE SEARCH
+	float search;
+    int choice;
+	printf("\tEnter the area of circle:"); 
+	scanf("\n%f", &search);
+	choice = line_search(InstantArray, search);
+	printf("\nPosition of a circle = %d\n\n", choice);
 	
 	//SORTED ARRAY	
 	quick_sort(InstantArray, 0, InstantArray->count-1);
@@ -26,14 +34,10 @@ int main(void)
 	fflush(sorted_array);
 	fclose(sorted_array);
 
-	float search;
-    int choice;
-	printf("\tEnter the area of circle:"); 
-	scanf("\n%f", &search);
-	choice = line_search(InstantArray, search);
-	printf("\nPosition of a circle = %d\n\n", choice);
 	freeArray(InstantArray);
 
 	getch();
 	return 0;
 }
+
+
