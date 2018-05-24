@@ -1,0 +1,145 @@
+//
+//  main.c
+//  demoSimpleSort
+//
+//  Created by Slava Gubar on 4/7/16.
+//  Copyright © 2016 Slava Gubar. All rights reserved.
+//
+
+#include <stdio.h>
+#include <time.h>
+#include <math.h>
+#include <stdlib.h>
+#include "SimpleSort.h"
+/* #include "shellSort.h"
+#include "quickSort.h" */
+
+#define ARRAY_SIZE(a) (sizeof(a)/sizeof(a[0]))
+#define SIZE1 10000
+
+static void fileWrite(unsigned char anArray[], int aSize, char nf[], FILE *anFile);
+static int fileRead(unsigned char anArray[], char nf[], FILE *anFile);
+
+int main(int argc, const char * argv[])
+{
+	unsigned char theArray[SIZE1];
+	
+	printf("Test bubble sorting\n");
+	
+	FILE *fl1;
+	int flSize=fileRead(theArray, "in.txt", fl1);
+	clock_t theStart0 = clock();
+    bubbleSort(theArray, flSize);
+	clock_t theEnd0 = clock();
+	printf("Sorted\n");
+	fileWrite(theArray, flSize, "outBubble.txt", fl1);
+	printf ("time of bubble sorting: %.10lf\n", (double)(theEnd0 - theStart0)/CLOCKS_PER_SEC);
+
+	printf("\nTest selection sorting\n");
+	flSize=fileRead(theArray, "in.txt", fl1);
+	theStart0 = clock();
+	selectionSort(theArray, flSize);
+	theEnd0 = clock();
+	printf("Sorted\n");
+	fileWrite(theArray, flSize, "outSelection.txt", fl1);
+	printf ("time of selection sorting: %.10lf\n", (double)(theEnd0 - theStart0)/CLOCKS_PER_SEC);
+
+	printf("\nTest insertion sorting\n");
+	flSize=fileRead(theArray, "in.txt", fl1);
+	theStart0 = clock();
+	insertionSort(theArray, flSize);
+	theEnd0 = clock();
+	printf("Sorted\n");
+	fileWrite(theArray, flSize, "outInsertion.txt", fl1);
+	printf ("time of insertion sorting: %.10lf\n", (double)(theEnd0 - theStart0)/CLOCKS_PER_SEC);
+
+/*	clock_t theStart0 = clock();
+	selectionSort(theArray3, ARRAY_SIZE(theArray3));
+	clock_t theEnd0 = clock();
+	printArray(theArray3, ARRAY_SIZE(theArray3));
+	printf ("time of Selection sorting: %.10lf\n", (double)(theEnd0 - theStart0)/CLOCKS_PER_SEC);
+
+	printf("\nTest Shell sorting\n");
+	int theArray4[] = {77, 99, 44, 55, 22, 88, 11, 0, 66, 33};
+	printArray(theArray4, ARRAY_SIZE(theArray4));
+	
+	clock_t theStart = clock();
+	shellSort(theArray4, ARRAY_SIZE(theArray4));
+	clock_t theEnd = clock();
+	printArray(theArray4, ARRAY_SIZE(theArray4));
+	
+	printf ("time of Shell sorting: %.10lf\n", (double)(theEnd - theStart)/CLOCKS_PER_SEC);
+	
+	printf ("Start to make partition of the array\n");
+	int the20Array[20];
+	int thePivot = 99; //make the pivot as avarage VALUE
+	fillArray(the20Array, ARRAY_SIZE(the20Array), thePivot);
+	printArray(the20Array, ARRAY_SIZE(the20Array));
+	
+	printf("Finish the partition with a pivot: %d\n", partitionIt(the20Array, 0,
+				ARRAY_SIZE(the20Array) - 1, 99));
+	
+	printArray(the20Array, ARRAY_SIZE(the20Array));
+
+	printf("\nTest Quick sorting\n");
+	int theQuickArray[10000];
+	fillArray(theQuickArray, ARRAY_SIZE(theQuickArray), 100);
+	printArray(theQuickArray, ARRAY_SIZE(theQuickArray));
+	
+	clock_t theStartQuick = clock();
+	quickSort2(theQuickArray, 0, ARRAY_SIZE(theQuickArray) - 1);
+	clock_t theEndQuick = clock();
+	printArray(theQuickArray, ARRAY_SIZE(theQuickArray));
+	
+	printf ("time of Quick sorting: %.10lf\n", (double)(theEndQuick - theStartQuick)/CLOCKS_PER_SEC);
+#endif
+	printf("Hello, World!\n");
+	
+	system("pause");
+*/	
+
+    return 0;
+}
+
+void fileWrite(unsigned char anArray[], int aSize, char nf[], FILE *anFile)
+{
+    anFile=fopen(nf,"a+");
+    for (int i=0; i<aSize; i++)
+    {
+        fputc(anArray[i], anFile);
+    }
+    fclose(anFile);
+}
+
+int fileRead(unsigned char anArray[], char nf[], FILE *anFile)
+{
+    anFile=fopen(nf,"r");
+    int theResult=0;
+    while ((anArray[theResult]=fgetc(anFile)) != EOF)
+    {
+        theResult++;
+    }
+    fclose(anFile);
+    return theResult;
+}
+
+void printArray(int anArray[], int aSize)
+{
+	printf("{");
+	for (int i = 0; i < aSize; i++)
+	{
+		printf(" %d ", anArray[i]);
+        if (i>0 && ((i % 20) == 0)) printf("\n");
+	}
+
+	printf("}\n\n");
+}
+
+void fillArray(int anArray[], int aSize, int aPivot)
+{
+	srand(0);
+	for (int i = 0; i < aSize; i++)
+	{
+		anArray[i] = rand() % (2 * aPivot);
+	}
+}
