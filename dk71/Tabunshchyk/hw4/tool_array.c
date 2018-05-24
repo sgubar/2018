@@ -91,22 +91,20 @@ void write_array_to_JSON(FILE *before, triangleArray *anArray)
 	fprintf(before, "]\n}");
 }
 
-
-void insertion_sort(triangle_array *anArray)
+void insertion_sort(triangleArray *anArray)
 {
-   int i, key, j;
-   for (i = 1; i < anArray->count; i++)
-   {
-       key = anArray->triangles[i];
-       j = i-1;
-		
-       while (j >= 0 && anArray->triangles[i] > key)
-       {
-           anArray->triangles[j+1] = anArray->triangles[j];
-           j = j-1;
-       }
-       anArray->triangles[j+1] = key;
-   }
+    triangle *key = NULL;
+    int i;
+	int j;
+    for (j = 1; j < anArray->count; j++)
+    {
+        key = anArray->triangles[j];
+        i = j - 1;
+        while(theIn >= 0 && anArray->flat[i] > anArray->flat[j])
+        {
+            anArray->triangles[i+1] = anArray->triangles[i];
+            i = i - 1;
+        }
+        anArray->triangles[i+1] = key;
+    }
 }
-
-
