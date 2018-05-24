@@ -11,7 +11,7 @@ int main()
     int search, A;
 
 
-    printf("Hello my friend \nEnter size of array please : ");
+    printf("Hello \nEnter size of array please : ");
 
     scanf("%d", &size);
 
