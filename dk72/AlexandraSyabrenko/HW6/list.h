@@ -39,8 +39,6 @@ Node *removeNodeAtIndex(List *list, int index);
 
 Node *insertNodeAtIndex(List *list, Node *newNode, int index);
 
-int getLength(List *list);
-
 void printList(const List *list);
 
 int listCount( List *list);
