@@ -205,13 +205,6 @@ Node *insertNodeAtIndex(List *list, Node *newNode, int index)
     return theResult;
 }
 
-int getLength(List *list)
-{
-    if (NULL == list)
-        return -1;
-    return list->count;
-}
-
 void printList(const List *list)
 {
     if (NULL == list)
