@@ -99,7 +99,7 @@ void insertion_sort(triangleArray *anArray)
     {
         key = anArray-> triangles[j];
         i = j - 1;
-        while(theIn >= 0 && anArray-> flat[i] > anArray -> flat[j])
+        while(i >= 0 && anArray-> flat[i] > anArray -> flat[j])
         {
             anArray -> triangles[i+1] = anArray -> triangles[i];
 		anArray-> flat[i+1] = anArray -> flat[i];
