@@ -91,10 +91,10 @@ void delete_tree(pbin_tree dt_tree)
 void print_tree(pnode pt_temp)
 {
 	if(pt_temp == NULL) return;
-	print_tree(pt_temp->left);
 	printf(" %.1f ", pt_temp->data);
+	print_tree(pt_temp->left);
 	print_tree(pt_temp->right);
-	printf("\n");
+	//printf("\n");
 }
 
 
