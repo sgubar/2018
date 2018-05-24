@@ -54,7 +54,7 @@ int main(int argc, const char * argv[])
 	fflush(after);
 	fclose(after);
 	
-	freeArray(theArray);
+	free_array(theArray);
 	
 	return 0;
 }
