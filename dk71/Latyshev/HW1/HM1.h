@@ -8,6 +8,6 @@
 
 
 
-int biennial_transformer(void)
+int biennial_transformer(void);
 
 #endif	
