@@ -53,10 +53,6 @@ int charcmp (char *a, char *b);
 int Depth1(Node *root);
 
 
-//void removeNodeByPtr(Node *target);
-
-//void deleteValue(Node *root, char value);
-
 
 
 
