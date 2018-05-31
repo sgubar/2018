@@ -50,7 +50,6 @@ void deleteTree(Node **root);
 
 int charcmp (char *a, char *b);
 
-int Depth1(Node *root);
 
 
 
