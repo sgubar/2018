@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "Binare_tree.h"
-int main() {
+int main() 
+{
     IntTree *theTree = createIntTree();
     insertIntValueToTree(theTree,40);
     insertIntValueToTree(theTree,23);
