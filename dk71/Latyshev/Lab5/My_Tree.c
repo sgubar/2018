@@ -255,141 +255,18 @@ return 0;
 
 
 
-int Depth1(Node **root)
 
-{
 
-	int h1=0, h2=0, h3=0;
 
-if (t==NULL) h3=0;
 
+   
 
 
-if ((*t)->left != NULL)
 
-{
 
-h1++;
 
-Depth1(&(*t)->left);
 
-}
 
-
-
-if ((*t)->right != NULL)
-
-{
-
-h2++;
-
-Depth1(&(*t)->right);
-
-}
-
-}
-
-
-
-int Depth(Tree *t) {
-
-if(t->parent){
-
-Depth1(&(t->parent));
-
-if (h1>h2) h3=h1;
-
-else h3=h2;
-
-return h3;
-
-}
-
-
-
-else return 0;
-
-}
-
-/*void removeNodeByPtr(Node *target)
-
- {
-
-    if (target->left && target->right)
-
-	{
-
-        Node *localMax = findMaxNode(target->left);
-
-        target->data = localMax->data;
-
-        removeNodeByPtr(localMax);
-
-        return;
-
-    } else if (target->left)
-
-	{
-
-        if (target == target->parent->left) {
-
-            target->parent->left = target->left;
-
-        } else {
-
-            target->parent->right = target->left;
-
-        }
-
-    } else if (target->right)
-
-	{
-
-        if (target == target->parent->right) {
-
-            target->parent->right = target->right;
-
-        } else {
-
-            target->parent->left = target->right;
-
-        }
-
-    } else {
-
-        if (target == target->parent->left)
-
-		{
-
-            target->parent->left = NULL;
-
-        } else {
-
-            target->parent->right = NULL;
-
-        }
-
-    }
-
-    free(target);
-
-}*/
-
-
-
-
-
-
-
-/*void deleteValue(Node *root, T value)
-
-{
-
-    Node *target = getNodeByValue(root, value);
-
-    removeNodeByPtr(target);
-
-}*/
 
 
 
