@@ -19,7 +19,7 @@ IntNode* create_IntNodeWithValue(int aValue);
 void insert_IntValueToTree(IntTree *aTree, int aValue);
 IntNode* find_NodeWithIntValue(IntTree *aTree, int aValue);
 IntNode* find_endTree(IntNode* aNode);
-IntNode* delete_NodeWithIntValue(IntTree *aTree,IntNode* aNode, int aElement);
+IntNode* delete_NodeWithIntValue(IntTree *aTree,IntNode* aNode, int aValue);
 void print_Node(IntNode *aNode);
 void destroy_Node(IntNode *aNode);
 
