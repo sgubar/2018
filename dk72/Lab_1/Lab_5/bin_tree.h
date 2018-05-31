@@ -1,14 +1,17 @@
+//
+// Created by vadim on 20.05.2018.
+//
+
 #ifndef bin_tree_h
 #define bin_tree_h
-
-typedef struct tagNode
+typedef struct __tagNode
 {
     int value;
-    struct tagNode *leftChild;
-    struct tagNode *rightChild;
+    struct __tagNode *leftChild;
+    struct __tagNode *rightChild;
 } Node;
 
-typedef struct tagTree
+typedef struct __tagTree
 {
     Node *root;
     int count;
