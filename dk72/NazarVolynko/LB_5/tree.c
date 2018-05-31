@@ -156,9 +156,9 @@ void print_Node(IntNode *aNode)
 {
 	if(NULL != aNode)
 	{
-		printf("%d ",aNode->value);
 		print_Node(aNode->leftChild);
 		print_Node(aNode->rightChild);
+		printf("%d ",aNode->value);
 	}
 }
 
