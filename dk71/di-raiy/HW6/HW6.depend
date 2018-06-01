@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1527840512 source:c:\users\di_ray\desktop\hw6\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tools.h"
+
+1527840551 c:\users\di_ray\desktop\hw6\tools.h
+	<stdio.h>
+
