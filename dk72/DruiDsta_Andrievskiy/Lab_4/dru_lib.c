@@ -25,14 +25,13 @@ void TLDestroyCharList(CharList *aList)
 	{
 		CharNode *theNode = aList->head;
 	
-		do
+		while(NULL!=theNode)
 		{
 			CharNode *theNodeToDelete = theNode;
-			theNode = theNode->next;
-		
+			
 			free (theNodeToDelete);
-		
-		}while (NULL != theNode);
+			theNode = theNode->next;
+		}
 	
 		free(aList);
 	}
@@ -70,12 +69,12 @@ void TLPrintList(CharList *aList)
 	printf("[List] with count (%d):\n", aList->count);
 	CharNode *theNode = aList->head;
 	
-	do
+	while (NULL != theNode)
 	{
 		printf("(%c) ", theNode->value);
 		theNode = theNode->next;
 	
-	}while (NULL != theNode);
+	}
 	
 	printf ("\n");
 }
