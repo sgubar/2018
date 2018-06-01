@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1527840067 source:c:\users\di_ray\desktop\hw5\dk_triangle_array.c
+	"dk_triangle_array.h"
+	<stdlib.h>
+	"dk_triangle2.h"
+
+1527840086 c:\users\di_ray\desktop\hw5\dk_triangle_array.h
+	<stdio.h>
+	"dk_triangle2.h"
+
+1527840047 c:\users\di_ray\desktop\hw5\dk_triangle2.h
+	<stdio.h>
+
+1527840111 source:c:\users\di_ray\desktop\hw5\main.c
+	<stdio.h>
+	"dk_triangle2.h"
+	"dk_triangle_array.h"
+
