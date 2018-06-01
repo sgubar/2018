@@ -1,40 +1,43 @@
 #include "dk_sort.h"
 
 
-void quickSort( char *array, int l, int r)
+void quickSort( char *array, int first, int last)
 {
-   int j;
-   if( l < r )
+   int left, mid, right;
+   
+   left = first;
+   right = last;
+   
+   int *array_pointer_left = &array[left];
+   int *array_pointer_right = &array[right];
+   
+   mid = array[(left + right)/2];
+   while (left <= right) 
    {
-       j = partition( array, l, r);
-       quickSort( array, l, j - 1);
-       quickSort( array, j + 1, r);
+		while (array[left] < mid) left++;
+		while (array[right] > mid) right--;
+		
+		if (left <= right)
+		{
+			swap (array_pointer_left, array_pointer_right);
+			left++;
+			right--;
+		}
    }
+   if (first < right) quickSort(array, first, right);
+   
+   if (left < last) quickSort(array, left, last);
 }
-
-
-int partition( char *array, int l, int r)
+   
+   
+void swap (int *one, int *two)
 {
-	int i, j;
-	char pivot, temp;
-
-	pivot = array[l];
-	i = l; j = r + 1;
-
-	while( 1)
-	{
-		do ++i; while( array[i] <= pivot && i <= r );
-		do --j; while( array[j] > pivot );
-		if( i >= j ) break;
-		temp = array[i]; 
-		array[i] = array[j]; 
-		array[j] = temp;
-	}
-	temp = array[l]; 
-	array[l] = array[j]; 
-	array[j] = temp;
-	return j;
+	int three = *one;
+	*one = *two;
+	*two = three;
 }
+   
+   
 
 int binarysearch(char key, char *array, int size)
 {
@@ -51,8 +54,8 @@ int binarysearch(char key, char *array, int size)
             low = middle + 1;
         	else return middle;
     	}
+    	return -1;
     }
-    return -1;
 }
 
 int FileSize (FILE* file)
@@ -100,17 +103,21 @@ char* loadFile (char * path , int  *size)
 	return NULL;
 }
 
-void record_to_file(char *aray, int size, char *name)
+void record_to_file(char *array, int size, char *name)
 {
-	int i;
 	FILE *file;
-	file= fopen(name, "w+");
+	file = fopen(name, "w+");
+	int i;
+
 	for(i = 0; i < size; i++)
 	{
-		fprintf(file,"%c\n", aray[i]);
+	    fprintf(file,"%c\n", array[i]);
 	}
+
 	fclose(file);
 }
+
+
 
 void output_of_the_array(char* x, int size)
 {
@@ -121,3 +128,4 @@ void output_of_the_array(char* x, int size)
 	}
 	printf("\n");
 }
+
