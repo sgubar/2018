@@ -47,3 +47,31 @@
 
 1525946623 c:\users\ярослав\desktop\sdz5\dz5.h
 
+1526548191 source:c:\users\ярослав\desktop\dz5\dz2.c
+	"dz2.h"
+	<stdlib.h>
+	<math.h>
+
+1526548193 c:\users\ярослав\desktop\dz5\dz2.h
+	<stdio.h>
+
+1526548194 source:c:\users\ярослав\desktop\dz5\dz3.c
+	"dz3.h"
+	<stdlib.h>
+
+1526548182 c:\users\ярослав\desktop\dz5\dz3.h
+	<stdio.h>
+	"dz2.h"
+
+1526548188 source:c:\users\ярослав\desktop\dz5\dz5.c
+	"dz2.h"
+	"dz3.h"
+	"dz5.h"
+	<stdio.h>
+
+1526548189 c:\users\ярослав\desktop\dz5\dz5.h
+
+1526548190 source:c:\users\ярослав\desktop\dz5\main.c
+	<stdio.h>
+	"dz3.h"
+

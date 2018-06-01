@@ -12,10 +12,17 @@ int main(int argc, const char * argv[])
 
 	addElement(theArray, &ABC);
 
+	A.y = 60;
+	B.x = 60;
+
+	addElement(theArray, &ABC);
+
 	A.y = 6;
 	B.x = 6;
 
 	addElement(theArray, &ABC);
+
+
 
 	FILE *file = fopen("test.json", "w+");
 
