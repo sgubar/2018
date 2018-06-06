@@ -2,7 +2,7 @@
 
 #include <conio.h>
 
-#include "bin_tree.h"
+#include "my_tree.h"
 
 
 
