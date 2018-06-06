@@ -12,17 +12,17 @@ int main()
 
     Tree *theTree = createTree();
 
-    insertValueToTree(theTree,65);
+    insertValueToTree(theTree,45);
 
-    insertValueToTree(theTree,66);
+    insertValueToTree(theTree,46);
 
-    insertValueToTree(theTree,67);
+    insertValueToTree(theTree,47);
 
     insertValueToTree(theTree,48);
 
-    insertValueToTree(theTree,39);
+    insertValueToTree(theTree,49);
 
-    insertValueToTree(theTree,64);
+    insertValueToTree(theTree,50);
 
 
 
@@ -32,7 +32,7 @@ int main()
 
     printf("\n");
 
-    Node *SeachNode = findNodeWithValue(theTree,(char)66); 
+    Node *SeachNode = findNodeWithValue(theTree,(char)46); 
 
     printf("\n");
 
@@ -40,7 +40,7 @@ int main()
 
     printf("\n");
 
-    deleteNodeWithElement(theTree, theTree -> root,(char)66);
+    deleteNodeWithElement(theTree, theTree -> root,(char)46);
 
     printf("Binary tree after deleted element");
 
