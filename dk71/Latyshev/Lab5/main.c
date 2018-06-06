@@ -18,11 +18,11 @@ int main()
 
     insertValueToTree(theTree,67);
 
-    insertValueToTree(theTree,68);
+    insertValueToTree(theTree,48);
 
-    insertValueToTree(theTree,69);
+    insertValueToTree(theTree,39);
 
-    insertValueToTree(theTree,70);
+    insertValueToTree(theTree,64);
 
 
 
