@@ -1,37 +1,59 @@
-#include <stdlib.h>
+#include <stdio.h>
 
-#include "My_Tree.h"
+#include <conio.h>
 
-#include <string.h>
-
-
-
-
-int main()
-
-{ 
-
-  Node *theTree = NULL;
-
-
-    insert(&theTree,17);
-
-    insert(&theTree,65);
-
-    insert(&theTree, 37);
-
-    insert(&theTree, 6);
-
-    insert(&theTree, 72);
-
-    insert(&theTree, 8);
-
-     inOrder(theTree);
+#include "bin_tree.h"
 
 
 
+int main() 
 
+{	
+
+    Tree *theTree = createTree();
+
+    insertValueToTree(theTree,65);
+
+    insertValueToTree(theTree,66);
+
+    insertValueToTree(theTree,67);
+
+    insertValueToTree(theTree,68);
+
+    insertValueToTree(theTree,69);
+
+    insertValueToTree(theTree,70);
+
+
+
+    printf("Binary tree\n");
+
+    printTree(theTree); 
+
+    printf("\n");
+
+    Node *SeachNode = findNodeWithValue(theTree,(char)66); 
+
+    printf("\n");
+
+    printf("Searched value =  %c \n", SeachNode ->value );
+
+    printf("\n");
+
+    deleteNodeWithElement(theTree, theTree -> root,(char)66);
+
+    printf("Binary tree after deleted element");
+
+    printf("\n");
+
+    printTree(theTree);
+
+    deleteTree(theTree);
+
+    
 
     getch();
+
+    return 0;
 
 }
