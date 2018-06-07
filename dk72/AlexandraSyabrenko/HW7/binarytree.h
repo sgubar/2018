@@ -29,6 +29,7 @@ void printTree(Node *aRoot);
 void insertFloatValueToTree(Tree *aTree, float aValue);
 
 int deleteValueFromTree(Tree *aTree, float aValue);
+Node *reciever(Tree *aTree, Node *aDelNode);
 
 Node *searchNodeWithValue(Tree *aTree, float aValue);
 
