@@ -26,7 +26,7 @@ void printTree(Node *aRoot);
 
 void insertDoubleValueToTree(Tree *aTree, double aValue);
 int deleteValueFromTree(Tree *aTree, double aValue);
-
+Node *reciever(Tree *aTree, Node *aDelNode);
 Node *searchNodeWithValue(Tree *aTree, double aValue);
 
 #endif /* tree_h */
