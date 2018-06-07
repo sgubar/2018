@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1528350206 source:c:\users\Ярослав\desktop\Новая папка\dz6\dk_tool.c
+	"dk_tool.h"
+	<stdlib.h>
+
+1528350206 c:\users\Ярослав\desktop\Новая папка\dz6\dk_tool.h
+	<stdio.h>
+
+1528350546 source:c:\users\Ярослав\desktop\Новая папка\dz6\sort.c
+	"dk_tool.h"
+	"Sort.h"
+
+1528350206 c:\users\Ярослав\desktop\Новая папка\dz6\sort.h
+	<stdio.h>
+	"dk_tool.h"
+
+1528350437 source:c:\users\Ярослав\desktop\Новая папка\dz6\main.c
+	<stdio.h>
+	"dk_tool.h"
+	"Sort.h"
+

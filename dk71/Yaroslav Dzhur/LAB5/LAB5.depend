@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1528350964 source:c:\users\Ярослав\desktop\Новая папка\lab5\binare_tree.c
+	"Binare_tree.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdlib.h>
+
+1528350964 c:\users\Ярослав\desktop\Новая папка\lab5\binare_tree.h
+
+1528350987 source:c:\users\Ярослав\desktop\Новая папка\lab5\main.c
+	<stdio.h>
+	"Binare_tree.h"
+
