@@ -128,26 +128,26 @@ Node *searchNodeWithValue(Tree *aTree, double aValue)
     return aCurrentNode;
 }
 
-Node *getRecipient(Tree *aTree, Node *aDelNode)
+Node *reciever(Tree *aTree, Node *aDelNode)
 {
-    Node *aRecipientParent = aDelNode;
-    Node *aRecipient = aDelNode;
+    Node *aRecieverParent = aDelNode;
+    Node *aReciever = aDelNode;
     Node *aCurrent = aDelNode->rightChild;
     
     while (aCurrent != NULL)
     {
-        aRecipientParent = aRecipient;
-        aRecipient = aCurrent;
+        aRecieverParent = aReciever;
+        aReciever = aCurrent;
         aCurrent = aCurrent->leftChild;
     }
     
-    if (aRecipient != aDelNode->rightChild)
+    if (aReciever != aDelNode->rightChild)
     {
-        aRecipientParent->leftChild = aRecipient->rightChild;
-        aRecipient->rightChild = aDelNode->rightChild;
+        aRecieverParent->leftChild = aReciever->rightChild;
+        aReciever->rightChild = aDelNode->rightChild;
     }
     
-    return aRecipient;
+    return aReciever;
 }
 
 int deleteValueFromTree(Tree *aTree, double aValue)
