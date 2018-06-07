@@ -80,7 +80,6 @@ void Clear(List* List) {
 		free(List->Tail->Prev);
 		List->Head = List->Tail;
 	}
-	List->Head = NULL;
 	free(List->Head);
 }
 
