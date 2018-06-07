@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1528322077 source:c:\users\ярослав\desktop\dddzzz\dk_array.c
+	"dk_array.h"
+
+1528348277 c:\users\ярослав\desktop\dddzzz\dk_array.h
+	<stdio.h>
+	<malloc.h>
+	"dk_triangle.h"
+
+1528321731 c:\users\ярослав\desktop\dddzzz\dk_rectangle.h
+	<stdio.h>
+	<malloc.h>
+	<math.h>
+
+1528348089 source:c:\users\ярослав\desktop\dddzzz\dk_rectangle.c
+	"dk_rectangle.h"
+
+1528348088 source:c:\users\ярослав\desktop\dddzzz\dk_sort.c
+	"dk_sort.h"
+
+1528348373 c:\users\ярослав\desktop\dddzzz\dk_sort.h
+	<stdio.h>
+	"dk_triangle.h"
+	"dk_array.h"
+
+1528348409 source:c:\users\ярослав\desktop\dddzzz\main.c
+	<stdio.h>
+	"dk_triangle.h"
+	"dk_array.h"
+	"dk_sort.h"
+
+1528348354 c:\users\ярослав\desktop\dddzzz\dk_triangle.h
+	<stdio.h>
+	<malloc.h>
+	<math.h>
+
+1528348389 source:c:\users\ярослав\desktop\dddzzz\dk_triangle.c
+	"dk_triangle.h"
+
