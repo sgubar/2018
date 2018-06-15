@@ -79,7 +79,7 @@ int GetLetterAmoutInFile (FILE* file)
   int size = 0, i=0;
   char value;
   int _size = GetCharsAmoutInFile (file);
-  fseek(file, 0L, SEEK_SET);
+  fseek(file, 0, SEEK_SET);
   if (file != NULL)
     {
     for(i = 0;i < _size ; i++)
