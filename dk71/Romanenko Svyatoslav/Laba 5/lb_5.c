@@ -130,9 +130,9 @@ void directOrder(FloatNode *aNode)
 {
     if(aNode != NULL)
     {
-    	printf("%f ",aNode ->value);
         directOrder(aNode ->leftChild);
         directOrder(aNode -> rightChild);
+        printf("%f ",aNode ->value);
 		
     }
 }
