@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1529520133 source:c:\users\οκ\desktop\codeblocks\laba3\func.c
+	"func.h"
+
+1529520133 c:\users\οκ\desktop\codeblocks\laba3\func.h
+	<stdio.h>
+
+1529577876 source:c:\users\οκ\desktop\codeblocks\laba3\main.c
+	<stdio.h>
+	<time.h>
+	"func.h"
+
