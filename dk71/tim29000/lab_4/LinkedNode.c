@@ -1,0 +1,20 @@
+#include "LinkedNode.h"
+#include <stdlib.h>
+
+IntNode *CreateNode(int adata)
+{
+	IntNode *Result = (IntNode *)malloc(sizeof(IntNode));
+
+	Result->data = adata;
+	Result->nextNode = NULL;
+
+	return Result;
+}
+
+void FreeNode(IntNode *aNode)
+{
+	if (NULL != aNode)
+	{
+		free(aNode);
+	}
+}
