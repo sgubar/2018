@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1529664457 source:c:\users\οκ\desktop\codeblocks\laba4\main.c
+	<stdio.h>
+	"list.h"
+	"quickSort.h"
+
+1529664609 c:\users\οκ\desktop\codeblocks\laba4\list.h
+
+1529664594 c:\users\οκ\desktop\codeblocks\laba4\quicksort.h
+	"list.h"
+
+1529664464 source:c:\users\οκ\desktop\codeblocks\laba4\quicksort.c
+	"quickSort.h"
+	"list.h"
+	<stdio.h>
+	<stdlib.h>
+
