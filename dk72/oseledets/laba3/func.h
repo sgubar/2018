@@ -1,7 +1,3 @@
-//
-// Created by Ihor on 20.06.2018.
-//
-
 #ifndef LAB2_FUNC_H
 #define LAB2_FUNC_H
 
