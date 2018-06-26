@@ -1,7 +1,3 @@
-//
-// Created by Ihor on 20.06.2018.
-//
-
 #include "func.h"
 
 void printArrToFile(char *array, int size, char* name)
