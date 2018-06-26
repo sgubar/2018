@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include "dru_arr.h"
 
 typedef struct tagPoint
 {
@@ -9,26 +10,18 @@ typedef struct tagPoint
 	int y;
 }Point;
 
-typedef struct Fig
+typedef struct tagTriangle
 {
 	Point *A;
 	Point *B;
 	Point *C;
-}Fig;
-
-typedef struct tagParam
-{
-	float a;
-	float b;
-	float c;
 	float S;
-}Param;
+}triangle;
 
-Fig *createFig(Point *A, Point *B, Point *C);
-void destroyFig(Fig *aFig);
-Param *enterParam(Fig *aFig);
-void printFig(Fig *aFig);
-void printParam(Param *aParam);
+triangle *create_triangle(Point *A, Point *B, Point *C);
+void enter(int *X, int *Y);
+void destroy_triangle(triangle *atriangle);
+float S_triangle(Point *A, Point *B, Point *C);
+void print_triangle(triangle *atriangle);
 void writePointToJSON(FILE *aFile, Point *aPoint);
-void writeFigToJSON(FILE *aFile, Fig *aFig);
-
+void writetriangleToJSON(FILE *aFile, triangle *atriangle);

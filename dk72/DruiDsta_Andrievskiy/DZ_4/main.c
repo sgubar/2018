@@ -3,54 +3,45 @@
 #include "dru_dz.h"
 #include "dru_arr.h"
 
-int main(int argc, char *argv[]) 
-{	
-	FigArr *theArr=createArr();
-	Point A, B, C;
+int main(void)
+{
+	int i;
+	int A_x, A_y, B_x, B_y, C_x, C_y;
+	int size;
+	printf("Entrer size: ");
+	scanf("%d",&size);
+	triangleArray *theArray = createArray(size);
 	
-	do{
+	for(i=1; i<=size; i++)
+	{
+	 	printf("\nEnter triangle ¹%d \n", i);
 		
-		
-		printf("Enter A->x ");
-		scanf("%d",&A.x);
-		printf("Enter A->y ");
-		scanf("%d",&A.y);
-		printf("Enter B->x ");
-		scanf("%d",&B.x);
-		printf("Enter B->y ");
-		scanf("%d",&B.y);
-		printf("Enter C->x ");
-		scanf("%d",&C.x);
-		printf("Enter C->y ");
-		scanf("%d",&C.y);
-		printf("\n\n\n");
-		
-		/*Fig *ABC=createFig(&A, &B, &C);
-		printFig(ABC);
-			
-		Param *ParamABC=enterParam(ABC);
-		printParam(ParamABC);*/
-		
-		addElement(theArr, createFig(&A, &B, &C), enterParam(createFig(&A, &B, &C)));
-		
-		/*destroyFig(ABC);
-		free(ParamABC);*/
-		
-	}while(theArr->count!=theArr->num);
+	    enter(&A_x,&A_y);
+	 	enter(&B_x,&B_y);
+	 	enter(&C_x,&C_y);
+
+		Point A = {A_x,A_y};
+		Point B = {B_x,B_y};
+		Point C = {C_x,C_y};
+
+		triangle ABC = {&A, &B, &C};
+
+		addElement(theArray, &ABC);
+		printf("\n\tOK\n");
+	}
 	
-	FILE *theFile = fopen("DZ.json", "w");
-	
-	writeArrayToJSON(theFile, theArr);
-	/*bubbleSort(theArr);
-	
-	printArr(theArr);
-	writeArrayToJSON(theFile, theArr);*/
-	
+	FILE *theFile = fopen("array.json", "w");
+	writeArrayToJSON(theFile, theArray);
 	fclose(theFile);
+
+	bubble_sort(theArray);
 	
-	freeArr(theArr);
-	
+	FILE *theFile2 = fopen("sort_array.json", "w");
+	writeArrayToJSON(theFile2, theArray);
+	fclose(theFile2);
+
+	freeArray(theArray);
+
 	return 0;
 }
-
 

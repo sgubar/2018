@@ -1,32 +1,26 @@
 #include "dru_arr.h"
 
-
-FigArr *createArr()
+triangleArray *createArray(int aNumber)
 {
-	FigArr *theResult = NULL;
-
-	int aNumber;
-	printf("Enter the number of figures:");
-	scanf("%d",&aNumber);
+	triangleArray *theResult = NULL;
 
 	if (aNumber > 0)
 	{
-		theResult = (FigArr *)malloc(sizeof(FigArr));
-
+		theResult =(triangleArray *)malloc(sizeof(triangleArray));
+		theResult->aTriangles = malloc(sizeof(float)*aNumber);
 		if (NULL != theResult)
 		{
-			theResult->aFig=(Fig **)malloc(sizeof(Fig *)*aNumber);
-			theResult->S=(float *)malloc(sizeof(float)*aNumber);
-			
-			if (NULL != theResult->aFig)
+			theResult->aTriangles = (triangle **)malloc(sizeof(triangle *)*aNumber);
+
+			if (NULL != theResult->aTriangles)
 			{
-				theResult->num=aNumber;
-				theResult->count=0;
+				theResult->number = aNumber;
+				theResult->count = 0;
 			}
 			else
 			{
 				free(theResult);
-				theResult=NULL;
+				theResult = NULL;
 			}
 		}
 	}
@@ -34,104 +28,80 @@ FigArr *createArr()
 	return theResult;
 }
 
-void addElement(FigArr *anArr, Fig *aFig, Param *fig_par)
+void freeArray(triangleArray *anArray)
 {
-
-	if (NULL!=anArr && NULL!=aFig && anArr->count<anArr->num)
+	int i;
+	if (NULL != anArray)
 	{
-		anArr->count++;
-		anArr->aFig[anArr->count]=aFig;
-		anArr->S[anArr->count]=fig_par->S;
-		
-	}
-
-}
-
-void freeArr(FigArr *anArr)
-{
-	int i=1;
-	if (NULL != anArr)
-	{
-		for (; i<=anArr->count; i++)
+		for (i = 0; i < anArray->count; i ++)
 		{
-			destroyFig(anArr->aFig[i]);
+			destroy_triangle(anArray->aTriangles[i]);
 		}
-		free(anArr->aFig);
-		free(anArr);
+
+		free(anArray->aTriangles);
+		free(anArray);
 	}
 }
 
-void writeArrayToJSON(FILE *aFile, FigArr *anArr)
+
+int addElement(triangleArray *anArray, triangle *atriangle)
 {
-	if (NULL == anArr || NULL == aFile)
+	int theResult = -1;
+
+	if (NULL != anArray && NULL != atriangle &&	anArray->count < anArray->number)
+	{
+		anArray->aTriangles[anArray->count]=create_triangle(atriangle->A, atriangle->B, atriangle->C);
+		theResult = anArray->count;
+		anArray->count ++;
+	}
+
+	return theResult;
+}
+
+void writeArrayToJSON(FILE *aFile, triangleArray *anArray)
+{
+	int i;
+	if (NULL == anArray || NULL == aFile)
 	{
 		return ;
 	}
-	
-	fprintf(aFile, "{\n\"number\" : %d,\n", anArr->num);
-	
-	int i=1;
-	for (; i<=anArr->count; i++)
+
+	fprintf(aFile, "{\n\"number\" : %d,\n\"count\" : %d,\n", anArray->number, anArray->count);
+	fprintf(aFile, "\"triangles\" : \n[\n");
+
+	for (i = 0; i < anArray->count; i ++)
 	{
-		fprintf(aFile, "\n\"count\" : %d,\n", i);
-		writeFigToJSON(aFile, anArr->aFig[i]);
-		fprintf(aFile, "S=%f", anArr->S[i]);
-		
-		if (i<anArr->count)
+		writetriangleToJSON(aFile, anArray->aTriangles[i]);
+
+		if (i < anArray->count - 1)
 		{
-			fprintf(aFile, "\n\\\\\\\\\\\\\\\\\\\\\\\\\\\n");
+			fprintf(aFile, ",");
 		}
-		
+		fprintf(aFile, "\n");
 	}
-	
-	fprintf(aFile, "\n}\n");
+
+	fprintf(aFile, "]\n}");
 }
 
-void bubbleSort(FigArr *anArray)
+
+void bubble_sort(triangleArray *anArray)
 {
-	int theIn, theOut=anArray->num--;
+	int theIn, theOut;
+	printf("Sorting...\n");
 	
-	for (; theOut>1; theOut--)
+	for (theOut = anArray->number - 1; theOut>=1; theOut--)
 	{
 		for (theIn=0; theIn<theOut; theIn++)
 		{
-			if (anArray->S[theIn]>anArray->S[theIn++])	TMP(&anArray->aFig[theIn], &anArray->aFig[theIn++]);
+			if (anArray->aTriangles[theIn]->S > anArray->aTriangles[theIn + 1]->S)	
+			{
+				triangle *temp = anArray->aTriangles[theIn];
+    			anArray->aTriangles[theIn] = anArray->aTriangles[theIn + 1];
+   				anArray->aTriangles[theIn + 1] = temp;
+   				
+   				printf(". ");
+			}
 		}
 	}
 }
-
-void TMP(FigArr *A1, FigArr *A2)
-{
-    FigArr *temp=A1;
-    A1=A2;
-    A2=temp;
-}
-
-void printArr(FigArr *anArray)
-{
-	if (NULL==anArray)
-	{
-		return ;
-	}
-	
-	printf("{\n\"number\" : %d,\n", anArray->num);
-	
-	int i=0;
-	for (; i<anArray->count; i++)
-	{
-		printf("\"count\" : %d\n", i);
-		printFig(anArray->aFig[i]);
-	
-		if (i>anArray->count-1)
-		{
-			printf("\n\\\\\\\\\\\\\\\\\\\\\\\\\\\n");
-		}
-		printf("S=%f\n\n", anArray->S[i]);
-	}
-	
-	printf("\n}\n");
-}
-
-
-
 

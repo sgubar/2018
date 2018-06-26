@@ -1,46 +1,35 @@
 #include "dru_dz.h"
 
-Fig *createFig(Point *A, Point *B, Point *C)
+Point *copyPointWithPoint(Point *aPoint);
+
+triangle *create_triangle(Point *A, Point *B, Point *C)
 {
-	Fig *result=NULL;
-	if(NULL!=A && NULL!=B && NULL!=C)
+	triangle *theResult = NULL;
+
+	if (NULL != A && NULL != B && NULL != C)
 	{
-		result=(Fig *)malloc(sizeof(Fig));
-		if(NULL!=result)
+		theResult = (triangle *)malloc(sizeof(triangle));
+		if (NULL != theResult)
 		{
-			result->A=A;
-			result->B=B;
-			result->C=C;
+			theResult->A = copyPointWithPoint(A);
+			theResult->B = copyPointWithPoint(B);
+			theResult->C = copyPointWithPoint(C);
 		}
 	}
-	return result;
+	theResult->S=S_triangle(A, B, C);
+	return theResult;
 }
 
-void destroyFig(Fig *aFig)
+float S_triangle(Point *A, Point *B, Point *C)
 {
-	if (NULL != aFig)
-	{
-		free(aFig->A);
-		free(aFig->B);
-		free(aFig->C);
+	float result;
 		
-		free(aFig);
-	}
-}
-
-Param *enterParam(Fig *aFig)
-{
-	Param *result=NULL;
-	if(NULL!=aFig->A && NULL!=aFig->B && NULL!=aFig->C)
-	{
-		result=(Param *)malloc(sizeof(Param));
-		
-		float temp_aX=aFig->C->x - aFig->A->x, 
-		temp_aY=aFig->C->y - aFig->A->y, 
-		temp_bX=aFig->B->x - aFig->C->x, 
-		temp_bY=aFig->B->y - aFig->C->y, 
-		temp_cX=aFig->A->x - aFig->B->x,  
-		temp_cY=aFig->A->y - aFig->B->y;
+		float temp_aX=C->x - B->x, 
+		temp_aY=C->y - B->y, 
+		temp_bX=A->x - C->x, 
+		temp_bY=A->y - C->y, 
+		temp_cX=A->x - B->x,  
+		temp_cY=A->y - B->y;
 		
 		float temp_a=sqrt(temp_aX*temp_aX+temp_aY*temp_aY), 
 		temp_b=sqrt(temp_bX*temp_bX+temp_bY*temp_bY), 
@@ -50,48 +39,61 @@ Param *enterParam(Fig *aFig)
 		if(temp_b<0) temp_b*=-1;
 		if(temp_c<0) temp_c*=-1;
 		
-		if(temp_a==0 || temp_b==0 || temp_c==0) 
+		if(temp_a == 0 || temp_b == 0 || temp_c == 0) 
 		{
 			printf("Error. The two points coincide\n");
-			result=NULL;
+			return result;
 		}
 		else
 		{
-			if(temp_b+temp_c<=temp_a || temp_a+temp_c<=temp_b || temp_b+temp_a<=temp_c)
+			if(temp_b + temp_c == temp_a || temp_a + temp_c == temp_b || temp_b + temp_a == temp_c)
 			{
 				printf("Error. All points lie on one straight line\n");
-				result=NULL;
+				return result;
 			}
 			else 
 			{
 				float P=temp_a+temp_b+temp_c;
 				float p=P/2;
-				result->S=sqrt(p*(p-temp_a)*(p-temp_b)*(p-temp_c));
-				
-				result->a=temp_a;
-				result->b=temp_b;
-				result->c=temp_c;
-				
+				result=sqrt(p*(p-temp_a)*(p-temp_b)*(p-temp_c));
 			}
 		}
 		
-	}
 	return result;
+
 }
 
-void printFig(Fig *aFig)
+void print_triangle(triangle *atriangle)
 {
-	if(NULL!=aFig->A && NULL!=aFig->B && NULL!=aFig->C)
+	if (NULL != atriangle)
 	{
-		printf("[Fig]:\nA(%d,%d)\nB(%d,%d)\nC(%d,%d)\n\n\n", aFig->A->x, aFig->A->y, aFig->B->x, aFig->B->y, aFig->C->x, aFig->C->y);
+		printf ("\tÊîîðäèíàòû òî÷åê :\n\n \t\tA(%d,%d)\n  \t\tB(%d,%d)\n  \t\tC(%d,%d)\n\n",
+					atriangle->A->x, atriangle->A->y,
+					atriangle->B->x, atriangle->B->y,
+					atriangle->C->x, atriangle->C->y);
 	}
 }
 
-void printParam(Param *aParam)
+Point *copyPointWithPoint(Point *aPoint)
 {
-	if(NULL!=aParam)
+	Point *theResult = (Point *)malloc(sizeof(Point));
+	if (NULL != theResult)
 	{
-		printf("[Param]:\na=%f;\nb=%f;\nc=%f;\nS=%f;\n\n\n", aParam->a, aParam->b, aParam->c, aParam->S);
+		theResult->x = aPoint->x;
+		theResult->y = aPoint->y;
+	}
+
+	return theResult;
+}
+
+void destroy_triangle(triangle *atriangle)
+{
+	if (NULL != atriangle)
+	{
+		free(atriangle->A);
+		free(atriangle->B);
+		free(atriangle->C);
+		free(atriangle);
 	}
 }
 
@@ -101,21 +103,31 @@ void writePointToJSON(FILE *aFile, Point *aPoint)
 	{
 		return ;
 	}
-	fprintf(aFile, "{%d, %d}", aPoint->x, aPoint->y);
+
+	fprintf(aFile, "{\"x\" : %d, \"y\" : %d}", aPoint->x, aPoint->y);
 }
 
-void writeFigToJSON(FILE *aFile, Fig *aFig)
+void writetriangleToJSON(FILE *aFile, triangle *atriangle)
 {
-	if (NULL == aFig || NULL == aFile)
+	if (NULL == atriangle || NULL == aFile)
 	{
 		return ;
 	}
 
 	fprintf(aFile, "{\n\"A\" : ");
-	writePointToJSON(aFile, aFig->A);
-	fprintf(aFile, ", \n\"B\" : ");
-	writePointToJSON(aFile, aFig->B);
-	fprintf(aFile, ", \n\"C\" : ");
-	writePointToJSON(aFile, aFig->C);
-	fprintf(aFile, "}\n");
+	writePointToJSON(aFile, atriangle->A);
+	fprintf(aFile, ",\n\"B\" : ");
+	writePointToJSON(aFile, atriangle->B);
+	fprintf(aFile, ",\n\"C\" : ");
+	writePointToJSON(aFile, atriangle->C);
+	fprintf(aFile, "\n\"S\" : %f\n}", atriangle->S);
+}
+
+
+ void enter(int *X, int *Y)
+{
+    printf("x=");
+    scanf("%d",X);
+    printf("y=");
+    scanf("%d",Y);
 }
