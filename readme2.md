@@ -8,5 +8,3 @@ Work repository for DK71, DK-72. AiP-2.
 
 Please note that each student must create separate **_work_ folder** for self in the corresponding group folder.
 Thanks.
-Ohohoho
-Ehehe
